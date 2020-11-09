@@ -28,7 +28,7 @@ const Cizalla = () => {
                                         
                                         <span className="badge badge-secondary badge-pill">4</span>
                                     </li>
-                                    <li className="list-group-item list-group-item-action d-flex justify-content-between align-items-center active">
+                                    <li className="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
                                        
                                             Cizalla
                                         
