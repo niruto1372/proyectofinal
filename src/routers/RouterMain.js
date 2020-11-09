@@ -1,10 +1,10 @@
 import React from 'react'
 
 import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    Link, HashRouter
 } from "react-router-dom";
 
 import RouterAdmin from './RouterAdmin';
@@ -16,14 +16,11 @@ const RouterMain = () => {
     return (
         <Router>
             <Switch>
-                <Route path={"/auth"} component={RouterAuth}/>
-                <Route path={"/admin"} component={RouterAdmin}/>
-                <Route path={"/"} component={RouterMantenedores}/>
+                <Route path={"/auth"} component={RouterAuth} />
+                <Route path={"/admin"} component={RouterAdmin} />
+                <Route path={"/"} component={RouterMantenedores} />
 
             </Switch>
-            
-            
-    
         </Router>
     )
 }

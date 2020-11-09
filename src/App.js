@@ -7,11 +7,7 @@ const App = () => {
 
   return (
     <RouterMain/>
-    // <>
-    //   <Header/>
-    //   <Main/>
-    //   <Footer/>
-    // </>
+    
   );
 };
 
