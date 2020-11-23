@@ -1,13 +1,15 @@
 import React from "react";
 
 import "./App.css";
+import AuthState from "./context/auth/authState";
 import RouterMain from "./routers/RouterMain";
 
-const App = () => { 
+const App = () => {
 
   return (
-    <RouterMain/>
-    
+    <AuthState>
+      <RouterMain />
+    </AuthState>
   );
 };
 

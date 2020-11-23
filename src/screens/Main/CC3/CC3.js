@@ -34,23 +34,23 @@ const Pmetalico = () => {
                 <tbody>
                   <tr>
                     <td scope="row">
-                      <i class="fas fa-circle fa__circle_redcrayola"></i>
+                      <i class="fas fa-circle fa__circle_seagreen"></i>
 
                       <Link
                         exact
                         to={"/cc3/cizalla/subsistema"}
                         className=""
                       >
-                        Cizalla
+                        Balanza 0
                       </Link>
                     </td>
 
-                    <td>15/15</td>
+                    <td>4/10</td>
                     <td>2</td>
-                    <td>50 min</td>
-                    <td>1</td>
-                    <td>3</td>
-                    <td>1</td>
+                    <td>35 min</td>
+                    <td>4</td>
+                    <td>7</td>
+                    <td>2</td>
                   </tr>
                   <tr>
                     <td scope="row">
@@ -60,14 +60,14 @@ const Pmetalico = () => {
                         to={"/cc3/geuromec/subsistema"}
                         className=""
                       >
-                        Grua euromec
+                        Balanza 1
                       </Link>
                     
                 </td>
-                    <td>8/8</td>
+                    <td>6/8</td>
                     <td>1</td>
-                    <td>27 min</td>
-                    <td>0</td>
+                    <td>07 min</td>
+                    <td>1</td>
                     <td>-</td>
                     <td>-</td>
                   </tr>
@@ -79,33 +79,33 @@ const Pmetalico = () => {
                         to={"/cc3/balanza/subsistema"}
                         className=""
                       >
-                        Balanza
+                        Balanza 2
                       </Link>
                     
                 </td>
-                    <td>4/5</td>
-                    <td>0</td>
-                    <td>-</td>
+                    <td>3/8</td>
+                    <td>2</td>
+                    <td>19</td>
                     <td>1</td>
                     <td>-</td>
                     <td>-</td>
                   </tr>
                   <tr>
                     <td scope="row">
-                      <i class="fas fa-circle fa__circle_seagreen"></i>
+                      <i class="fas fa-circle fa__circle_redcrayola"></i>
                       <Link
                         exact
                         to={"/cc3/slimpieza/subsistema"}
                         className=""
                       >
-                        Sistema de limpieza
+                        Drenaje
                       </Link>
                     
                 </td>
-                    <td>2/3</td>
-                    <td>0</td>
-                    <td>-</td>
-                    <td>1</td>
+                    <td>5/6</td>
+                    <td>7</td>
+                    <td>2</td>
+                    <td>8</td>
                     <td>-</td>
                     <td>-</td>
                   </tr>

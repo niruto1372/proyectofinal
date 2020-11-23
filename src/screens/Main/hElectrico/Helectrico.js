@@ -34,23 +34,23 @@ const Pmetalico = () => {
                 <tbody>
                   <tr>
                     <td scope="row">
-                      <i class="fas fa-circle fa__circle_redcrayola"></i>
+                      <i class="fas fa-circle fa__circle_seagreen"></i>
 
                       <Link
                         exact
                         to={"/hElectrico/cizalla/subsistema"}
                         className=""
                       >
-                        Cizalla
+                        Patio 1
                       </Link>
                     </td>
 
-                    <td>15/15</td>
-                    <td>2</td>
-                    <td>50 min</td>
-                    <td>1</td>
+                    <td>4/10</td>
                     <td>3</td>
-                    <td>1</td>
+                    <td>33 min</td>
+                    <td>5</td>
+                    <td>23</td>
+                    <td>0</td>
                   </tr>
                   <tr>
                     <td scope="row">
@@ -60,15 +60,15 @@ const Pmetalico = () => {
                         to={"/hElectrico/geuromec/subsistema"}
                         className=""
                       >
-                        Grua euromec
+                        Puente
                       </Link>
                     
                 </td>
-                    <td>8/8</td>
-                    <td>1</td>
-                    <td>27 min</td>
+                    <td>3/7</td>
+                    <td>10</td>
+                    <td>17 min</td>
                     <td>0</td>
-                    <td>-</td>
+                    <td>1</td>
                     <td>-</td>
                   </tr>
                   <tr>
@@ -79,16 +79,16 @@ const Pmetalico = () => {
                         to={"/hElectrico/balanza/subsistema"}
                         className=""
                       >
-                        Balanza
+                        Barcazas
                       </Link>
                     
                 </td>
-                    <td>4/5</td>
-                    <td>0</td>
+                    <td>7/15</td>
+                    <td>2</td>
+                    <td>5</td>
+                    <td>9</td>
                     <td>-</td>
                     <td>1</td>
-                    <td>-</td>
-                    <td>-</td>
                   </tr>
                   <tr>
                     <td scope="row">
@@ -98,15 +98,15 @@ const Pmetalico = () => {
                         to={"/hElectrico/slimpieza/subsistema"}
                         className=""
                       >
-                        Sistema de limpieza
+                        Estacionamiento
                       </Link>
                     
                 </td>
-                    <td>2/3</td>
-                    <td>0</td>
+                    <td>2/7</td>
+                    <td>10</td>
                     <td>-</td>
+                    <td>4</td>
                     <td>1</td>
-                    <td>-</td>
                     <td>-</td>
                   </tr>
                 </tbody>

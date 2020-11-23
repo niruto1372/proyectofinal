@@ -10,6 +10,7 @@ import {
 import RouterAdmin from './RouterAdmin';
 import RouterAuth from './RouterAuth';
 import RouterMantenedores from './RouterMantenedores';
+import RutaPrivada from './RutaPrivada';
 
 
 const RouterMain = () => {
@@ -17,8 +18,11 @@ const RouterMain = () => {
         <Router>
             <Switch>
                 <Route path={"/auth"} component={RouterAuth} />
-                <Route path={"/admin"} component={RouterAdmin} />
-                <Route path={"/"} component={RouterMantenedores} />
+                <RutaPrivada path={"/admin"} componente={RouterAdmin} />
+                <RutaPrivada path={"/"} componente={RouterMantenedores} />
+
+                {/* <Route path={"/admin"} component={RouterAdmin} />
+                <Route path={"/"} component={RouterMantenedores} /> */}
 
             </Switch>
         </Router>

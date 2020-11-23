@@ -12,17 +12,17 @@ const AuthLogin = () => {
                 </div>
                 <div className="card-body">
                     <form>
-                        <div class="form-group">
-                            <label for="exampleInputEmail1">Usuario</label>
-                            <input type="input" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"/>
+                        <div className="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" className="form-control" id="email" aria-describedby="emailHelp"/>
                             
                         </div>
-                        <div class="form-group">
-                            <label for="exampleInputPassword1">Contraseña</label>
-                            <input type="password" class="form-control" id="exampleInputPassword1"/>
+                        <div className="form-group">
+                            <label for="password">Contraseña</label>
+                            <input type="password" className="form-control" id="password"/>
                         </div>
                         
-                        <button type="submit" class="btn btn-primary btn_sesion">Iniciar sesión</button>
+                        <button type="submit" className="btn btn-primary btn_sesion">Iniciar sesión</button>
     
                     </form>
                 </div>

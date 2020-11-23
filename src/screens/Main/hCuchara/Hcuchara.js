@@ -34,14 +34,14 @@ const Pmetalico = () => {
                 <tbody>
                   <tr>
                     <td scope="row">
-                      <i class="fas fa-circle fa__circle_redcrayola"></i>
+                      <i class="fas fa-circle fa__circle_seagreen"></i>
 
                       <Link
                         exact
                         to={"/hCuchara/cizalla/subsistema"}
                         className=""
                       >
-                        Cizalla
+                        Estacionamiento
                       </Link>
                     </td>
 
@@ -54,7 +54,7 @@ const Pmetalico = () => {
                   </tr>
                   <tr>
                     <td scope="row">
-                      <i class="fas fa-circle fa__circle_seagreen"></i>
+                      <i class="fas fa-circle fa__circle_redcrayola"></i>
                       <Link
                         exact
                         to={"/hCuchara/geuromec/subsistema"}
