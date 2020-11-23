@@ -1,4 +1,4 @@
-import React, {  useReducer } from "react";
+import React, { useReducer } from "react";
 import AuthContext from "./authContext";
 import AuthReducer from "./authReducer";
 
@@ -10,17 +10,29 @@ const AuthState = (props) => {
     token: null,
   });
 
+  const iniciarSesionConLocalStorage=()=>{
+    if (!localStorage.getItem("token")) return;
+    const token = localStorage.getItem("token");
+    
+    const payloadEnc = token.split(".")[1];
+    const payloadDes = window.atob(payloadEnc);
+    const payloadJSON = JSON.parse(payloadDes);
+  }
+
   const iniciarSesion = (token) => {
     const payloadEnc = token.split(".")[1];
 
     const payloadDes = window.atob(payloadEnc);
     const payloadJSON = JSON.parse(payloadDes);
-    
+
+    localStorage.setItem("token", token);
+
     dispatch({
-      type:"INICIAR_SESION",
-      data:{...payloadJSON,token},
+      type: "INICIAR_SESION",
+      data: { ...payloadJSON, token },
     })
   }
+
 
   return (
     <AuthContext.Provider value={{
