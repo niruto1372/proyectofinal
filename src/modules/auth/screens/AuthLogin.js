@@ -1,5 +1,6 @@
 import React from 'react'
 
+
 const AuthLogin = () => {
     return (
         < >
@@ -13,17 +14,17 @@ const AuthLogin = () => {
                 <div className="card-body">
                     <form>
                         <div className="form-group">
-                            <label for="email">Email</label>
+                            <label htmlFor="email">Email</label>
                             <input type="email" className="form-control" id="email" aria-describedby="emailHelp"/>
                             
                         </div>
                         <div className="form-group">
-                            <label for="password">Contraseña</label>
+                            <label htmlFor="password">Contraseña</label>
                             <input type="password" className="form-control" id="password"/>
                         </div>
                         
                         <button type="submit" className="btn btn-primary btn_sesion">Iniciar sesión</button>
-    
+                        
                     </form>
                 </div>
                 

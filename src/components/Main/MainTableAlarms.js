@@ -103,7 +103,7 @@ const MainTableAlarms = () => {
                                 ocultarMesaById(objAlarmas.id);
                             }}
                         >
-                            <i class="fas fa-minus-circle"></i>
+                            <i className="fas fa-minus-circle"></i>
                         </button>
                     </>
                 ),
@@ -115,14 +115,14 @@ const MainTableAlarms = () => {
                                 infoAlarmaById(objAlarmas.id);
                             }}
                         >
-                            <i class="fas fa-info-circle"></i>
+                            <i className="fas fa-info-circle"></i>
                         </button>
                     </>
                 ),
                 generarOM: (
                     <>
                         <button className="btn btn-sm btn-outline-success">
-                            <i class="fas fa-play-circle"></i>
+                            <i className="fas fa-play-circle"></i>
                         </button>
                     </>
                 ),
@@ -137,7 +137,7 @@ const MainTableAlarms = () => {
         <div>
             <div className="card card__table mx-auto">
                 <div className="card-body ">
-                    <div class="table-responsive-xl">
+                    <div className="table-responsive-xl">
                         <MDBDataTableV5
                             hover
                             bordered

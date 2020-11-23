@@ -10,8 +10,8 @@ const Pmetalico = () => {
       <Router>
         <div className="card card__table mx-auto">
           <div className="card-body ">
-            <div class="table-responsive-md">
-              <table class="table table-bordered table-hover text-center table-sm">
+            <div className="table-responsive-md">
+              <table className="table table-bordered table-hover text-center table-sm">
                 <thead>
                   <tr>
                     <th>Sistema</th>
@@ -23,18 +23,18 @@ const Pmetalico = () => {
                     <th>OM Pendientes</th>
                   </tr>
                   <tr>
-                    <th><i class="fas fa-industry"></i></th>
-                    <th><i class="fas fa-exchange-alt"></i></th>
-                    <th colspan="2"><i class="fas fa-exclamation-triangle text-warning"></i></th>
-                    <th><i class="fas fa-clock"></i></th>
-                    <th><i class="fas fa-eye-slash"></i></th>
-                    <th><i class="fas fa-exclamation-circle text-danger"></i></th>
+                    <th><i className="fas fa-industry"></i></th>
+                    <th><i className="fas fa-exchange-alt"></i></th>
+                    <th colSpan="2"><i className="fas fa-exclamation-triangle text-warning"></i></th>
+                    <th><i className="fas fa-clock"></i></th>
+                    <th><i className="fas fa-eye-slash"></i></th>
+                    <th><i className="fas fa-exclamation-circle text-danger"></i></th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
                     <td scope="row">
-                      <i class="fas fa-circle fa__circle_redcrayola"></i>
+                      <i className="fas fa-circle fa__circle_redcrayola"></i>
 
                       <Link
                         exact
@@ -54,7 +54,7 @@ const Pmetalico = () => {
                   </tr>
                   <tr>
                     <td scope="row">
-                      <i class="fas fa-circle fa__circle_seagreen"></i>
+                      <i className="fas fa-circle fa__circle_seagreen"></i>
                       <Link
                         exact
                         to={"/pMetalico/geuromec/subsistema"}
@@ -73,7 +73,7 @@ const Pmetalico = () => {
                   </tr>
                   <tr>
                     <td scope="row">
-                      <i class="fas fa-circle fa__circle_seagreen"></i>
+                      <i className="fas fa-circle fa__circle_seagreen"></i>
                       <Link
                         exact
                         to={"/pMetalico/balanza/subsistema"}
@@ -92,7 +92,7 @@ const Pmetalico = () => {
                   </tr>
                   <tr>
                     <td scope="row">
-                      <i class="fas fa-circle fa__circle_seagreen"></i>
+                      <i className="fas fa-circle fa__circle_seagreen"></i>
                       <Link
                         exact
                         to={"/pMetalico/slimpieza/subsistema"}

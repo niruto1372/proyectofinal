@@ -7,7 +7,7 @@ const Cizalla = () => {
     return (
         <div>
             <div className="card card__table mx-auto">
-                <div class="card-header">
+                <div className="card-header">
                     <h2 className="card-title text-center">Patio Metálico</h2>
                 </div>
 
