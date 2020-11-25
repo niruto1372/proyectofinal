@@ -1,22 +1,36 @@
-import React, { useReducer } from "react";
+import React, { useReducer, useEffect } from "react";
 import AuthContext from "./authContext";
 import AuthReducer from "./authReducer";
 
 const AuthState = (props) => {
   const [state, dispatch] = useReducer(AuthReducer, {
     autenticado: false,
-    user_name: null,
-    user_id: null,
+    username: null,
+    id: null,
     token: null,
+    cargando: true,
   });
 
-  const iniciarSesionConLocalStorage=()=>{
+  useEffect(() => {
+    iniciarSesionConLocalStorage();
+  }, [])
+
+  const iniciarSesionConLocalStorage = () => {
     if (!localStorage.getItem("token")) return;
     const token = localStorage.getItem("token");
-    
     const payloadEnc = token.split(".")[1];
     const payloadDes = window.atob(payloadEnc);
     const payloadJSON = JSON.parse(payloadDes);
+    console.log(payloadJSON);
+
+    dispatch({
+      type:"INICIAR_SESION",
+      data: {
+        ...payloadJSON,
+        token,
+      }
+    })
+
   }
 
   const iniciarSesion = (token) => {
@@ -24,7 +38,7 @@ const AuthState = (props) => {
 
     const payloadDes = window.atob(payloadEnc);
     const payloadJSON = JSON.parse(payloadDes);
-
+    console.log(payloadJSON);
     localStorage.setItem("token", token);
 
     dispatch({
@@ -37,8 +51,9 @@ const AuthState = (props) => {
   return (
     <AuthContext.Provider value={{
       autenticado: state.autenticado,
-      user_name: state.user_name,
-      user_id: state.user_id,
+      username: state.username,
+      id: state.id,
+      cargando: state.cargando,
       iniciarSesion: iniciarSesion
     }}>
       {props.children}

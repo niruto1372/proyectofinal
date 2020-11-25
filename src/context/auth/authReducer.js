@@ -3,9 +3,10 @@ const AuthReducer = (stateActual, action) => {
     case "INICIAR_SESION":
       return {
         autenticado: true,
-        user_name: action.data_user_name,
-        user_id: action.data.user_id,
-        token:action.data.token,
+        username: action.data.username,
+        id: action.data.user_id,
+        token: action.data.token,
+        cargando: false,
       }
     default:
       return { ...stateActual };

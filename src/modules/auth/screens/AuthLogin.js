@@ -14,8 +14,8 @@ const AuthLogin = () => {
                 <div className="card-body">
                     <form>
                         <div className="form-group">
-                            <label htmlFor="email">Email</label>
-                            <input type="email" className="form-control" id="email" aria-describedby="emailHelp"/>
+                            <label htmlFor="email">Usuario</label>
+                            <input type="text" className="form-control" id="email" aria-describedby="emailHelp"/>
                             
                         </div>
                         <div className="form-group">
