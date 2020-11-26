@@ -48,13 +48,21 @@ const AuthState = (props) => {
   }
 
 
+  const cerrarSesion=()=>{
+    localStorage.removeItem("token");
+    dispatch({
+      type:"CERRAR_SESION",
+    });
+  };
+
   return (
     <AuthContext.Provider value={{
       autenticado: state.autenticado,
       username: state.username,
       id: state.id,
       cargando: state.cargando,
-      iniciarSesion: iniciarSesion
+      iniciarSesion: iniciarSesion,
+      cerrarSesion
     }}>
       {props.children}
     </AuthContext.Provider>

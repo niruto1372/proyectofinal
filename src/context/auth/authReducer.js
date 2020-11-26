@@ -8,6 +8,14 @@ const AuthReducer = (stateActual, action) => {
         token: action.data.token,
         cargando: false,
       }
+    case "CERRAR_SESION":
+      return{
+        autenticado: false,
+        username: null,
+        id: null,
+        token: null,
+        cargando: false,
+      }
     default:
       return { ...stateActual };
 

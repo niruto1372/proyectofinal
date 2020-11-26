@@ -1,6 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
+import AuthContext from "../context/auth/authContext";
+import {withRouter} from "react-router-dom";
 
-const Header = () => {
+const Header = ({history}) => {
+  
+  const localAuthContext = useContext(AuthContext);
+  const { id,cerrarSesion } = localAuthContext;
+
   return (
     <header>
       <nav className="navbar navbar-expand-sm navbar-dark  headerBar">
@@ -31,11 +37,21 @@ const Header = () => {
               </a>
             </li>
           </ul>
-          <span className="navbar-text">Nilton Santos</span>
+          <span className="navbar-text">id de usuario: {id} </span>
+          <button 
+          className="btn btn-outline-light btn-sm" 
+          onClick={ () => {
+             cerrarSesion();
+             history.replace("/auth")
+             }
+            }
+          >
+            Cerrar sesion
+          </button>
         </div>
       </nav>
     </header>
   );
 };
 
-export default Header;
+export default withRouter(Header);
