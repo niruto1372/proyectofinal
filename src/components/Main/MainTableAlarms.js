@@ -2,13 +2,21 @@ import React, { useEffect, useState } from 'react';
 import { MDBDataTableV5 } from 'mdbreact';
 import { getAlarmas, deleteAlarmaById } from '../../services/alarmas';
 import Swal from "sweetalert2";
+import Cargando from '../../modules/admin/components/Cargando';
 
 const MainTableAlarms = () => {
     const [alarmas, setAlarmas] = useState([]);
-    useEffect(() => {
+    const [loading, setLoading] = useState(true);
+
+    const obtenerAlarmas = () => {
         getAlarmas().then((rpta) => {
             setAlarmas(rpta);
+            setLoading(false);
         });
+    };
+
+    useEffect(() => {
+        obtenerAlarmas();
     }, []);
 
     const swalWithBootstrapButtons = Swal.mixin({
@@ -20,77 +28,61 @@ const MainTableAlarms = () => {
     })
 
     const ocultarMesaById = (id) => {
-        Swal.mixin({
-            input: 'text',
-            confirmButtonText: 'Siguiente &rarr;',
+
+        Swal.fire({
+            title: '¿Estas seguro?',
+            text: "¡No podrás deshacer los cambios!",
+            icon: 'warning',
             showCancelButton: true,
-            progressSteps: ['1', '2', '3']
-        }).queue([
-            {
-                title: 'Estas seguro de eliminar esta alarma?',
-                text: 'Nivel de tanque de aceite'
-            },
-            'Motivo',
-            'Ingresa tu nombre'
-        ]).then((result) => {
-            if (result.value) {
-                swalWithBootstrapButtons.fire({
-                    title: '¿Estas seguro?',
-                    text: "¡No se podrá revertir los cambios!",
-                    icon: 'warning',
-                    showCancelButton: true,
-                    confirmButtonText: '¡Sí, eliminar!',
-                    cancelButtonText: 'No, cancelar!',
-                    reverseButtons: true
-                }).then((result) => {
-                    if (result.isConfirmed) {
-                        swalWithBootstrapButtons.fire(
-                            '¡Hecho!',
-                            'Se ha eliminado la alarma exitosamente',
-                            'success'
-                        )
-                    } else if (
-                        /* Read more about handling dismissals below */
-                        result.dismiss === Swal.DismissReason.cancel
-                    ) {
-                        swalWithBootstrapButtons.fire(
-                            '¡Cancelado',
-                            'Has cancelado la operación',
-                            'error'
-                        )
-                    }
-                })
+            confirmButtonColor: '#EB1651',
+            cancelButtonColor: '#595856',
+            confirmButtonText: 'Sí, eliminar!',
+            cancelButtonText: "Cancelar"
+        }).then((rpta) => {
+            if (rpta.value) {
+                deleteAlarmaById(id).then((rpta) => {
+                    Swal.fire(
+                        {
+                            title: '¡Eliminado!',
+                            text: 'Alarma eliminada satisfactoriamente.',
+                            icon: 'success',
+                            timer: 1500,
+                            //showConfirmButton:false,
+                        }
+                    );
+                    obtenerAlarmas();
+
+                });
+
             }
+
         })
-        // .then((rpta) => {
-        //     if (rpta.value) {
-        //         deleteAlarmaById(id);
-        //     }
-        // })
+
+
     }
 
     const infoAlarmaById = (id) => {
-        alarmas.filter((id)=>{
+        alarmas.filter((id) => {
             Swal.fire(
                 'Valor fuera de rango Inferior',
                 'Revisar qué tan inestable se encuentra en las últimas 24 horas',
                 'question'
             )
         })
-        
+
     }
 
     const datatable = {
         columns: [
-            { label: "Ocultar", field: "ocultar" },
+            { label: "Eliminar", field: "ocultar" },
             { label: "Area", field: "area" },
-            { label: "Sistema", field: "sistema" },
-            { label: "Subsistema", field: "subsistema" },
-            { label: "Variable Observada", field: "variableObservada" },
-            { label: "Detalle", field: "detalle" },
+            { label: "Sistema", field: "system" },
+            { label: "Subsistema", field: "subsystem" },
+            { label: "Variable Observada", field: "variable" },
+            { label: "Valor", field: "value" },
             { label: "Mas detalle", field: "masDetalle" },
-            { label: "Hora de Inicio", field: "hInicio" },
-            { label: "Generar OM", field: "generarOM" },
+            { label: "Fecha y Hora de Inicio", field: "time" },
+            // { label: "Generar OM", field: "generarOM" },
         ],
         rows: alarmas.map((objAlarmas) => {
             return {
@@ -119,13 +111,13 @@ const MainTableAlarms = () => {
                         </button>
                     </>
                 ),
-                generarOM: (
-                    <>
-                        <button className="btn btn-sm btn-outline-success">
-                            <i className="fas fa-play-circle"></i>
-                        </button>
-                    </>
-                ),
+                // generarOM: (
+                //     <>
+                //         <button className="btn btn-sm btn-outline-success">
+                //             <i className="fas fa-play-circle"></i>
+                //         </button>
+                //     </>
+                // ),
             }
         }),
     };
@@ -136,16 +128,30 @@ const MainTableAlarms = () => {
     return (
         <div>
             <div className="card card__table mx-auto">
+                <div class="card-header">
+                    <h4 class="card-title text-center">Lista de variables con alarma</h4>
+                    
+                </div>
                 <div className="card-body ">
                     <div className="table-responsive-xl">
-                        <MDBDataTableV5
-                            hover
-                            bordered
-                            entriesOptions={[5, 20, 25]}
-                            entries={5}
-                            pagesAmount={4}
-                            data={datatable}
-                        />
+                        {loading ? <Cargando text="Realizando consulta de variables con alarma activada" /> :
+                            <MDBDataTableV5
+                                searchLabel={"Buscar"}
+                                infoLabel={['', '-', 'de', '']}
+                                hover
+                                bordered
+                                entriesOptions={[5, 10, 20]}
+                                entries={5}
+                                pagesAmount={4}
+                                data={datatable}
+                                fullPagination
+
+                                exportToCSV
+                                responsive
+                                responsiveSm
+                                small
+                            //scrollY
+                            />}
                     </div>
                 </div>
             </div>

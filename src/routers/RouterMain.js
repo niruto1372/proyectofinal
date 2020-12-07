@@ -22,8 +22,7 @@ const RouterMain = () => {
                 <RutaPrivada path={"/admin"} componente={RouterAdmin} />
                 <RutaPrivada path={"/"} componente={RouterMantenedores} />
 
-                {/* <Route path={"/admin"} component={RouterAdmin} />
-                <Route path={"/"} component={RouterMantenedores} /> */}
+                
 
             </Switch>
         </Router>
