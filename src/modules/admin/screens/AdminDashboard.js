@@ -5,12 +5,13 @@ import { getVariableById } from '../../../services/alarmas'
 // import Formulario from '../components/Formulario'
 import FormularioSingleAlarm from '../components/FormularioSingleAlarm'
 import TableSingleVariable from '../components/TableSingleVariable'
+import LineChart from './../components/LineChart'
 
 const AdminDashboard = () => {
     const [curva, setCurva] = useState([]);
     const [loading, setLoading] = useState(true);
-    const [curvaAconsultar,setcurvaAconsultar]=useState("");
-    
+    const [curvaAconsultar, setcurvaAconsultar] = useState("");
+
 
     const obtenerVariable = (curvaAconsultar) => {
         getVariableById(curvaAconsultar).then((rpta) => {
@@ -30,10 +31,23 @@ const AdminDashboard = () => {
         {/* <Formulario /> */}
         <div className="row ml-0 mr-0 ">
             <div className="col-md-3 col-sm-12 mt-2">
-                <FormularioSingleAlarm setcurvaAconsultar={setcurvaAconsultar} obtenerVariable={obtenerVariable}/>
+                <FormularioSingleAlarm setcurvaAconsultar={setcurvaAconsultar} obtenerVariable={obtenerVariable} />
             </div>
             <div className="col-md-9 col-sm-12  mt-2">
-                <TableSingleVariable curva={curva} loading={loading} obtenerVariable={obtenerVariable} curvaAconsultar={curvaAconsultar} setcurvaAconsultar={setcurvaAconsultar}/>
+                <div className="card">
+                    <div className="card-body">
+                        
+                        <LineChart curva={curva} loading={loading} obtenerVariable={obtenerVariable} curvaAconsultar={curvaAconsultar} setcurvaAconsultar={setcurvaAconsultar}/>
+                        
+                    </div>
+                </div>
+
+            </div>
+            
+        </div>
+        <div className="row">
+        <div className="col-md-12 col-sm-12  mt-2">
+                <TableSingleVariable curva={curva} loading={loading} obtenerVariable={obtenerVariable} curvaAconsultar={curvaAconsultar} setcurvaAconsultar={setcurvaAconsultar} />
             </div>
         </div>
 

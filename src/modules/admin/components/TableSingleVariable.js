@@ -70,6 +70,7 @@ const TableSingleVariable = ({curva, loading, obtenerVariable, curvaAconsultar,s
     }),
   };
 
+  
   return (
 
     <div className="card  mx-auto">
