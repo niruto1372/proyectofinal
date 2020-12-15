@@ -1,15 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import { MDBDataTableV5 } from 'mdbreact';
-import { getAlarmas, deleteAlarmaById } from '../../services/alarmas';
+import { getVariables, getAlarmas, deleteAlarmaById } from '../../services/alarmas';
 import Swal from "sweetalert2";
 import Cargando from '../../modules/admin/components/Cargando';
 
-const MainTableAlarms = () => {
+const TableVariables = () => {
     const [alarmas, setAlarmas] = useState([]);
     const [loading, setLoading] = useState(true);
 
     const obtenerAlarmas = () => {
-        getAlarmas().then((rpta) => {
+      getVariables().then((rpta) => {
             setAlarmas(rpta);
             setLoading(false);
         });
@@ -84,7 +84,7 @@ const MainTableAlarms = () => {
                 ocultar: (
                     <>
                         <button
-                            className="btn btn-sm btn-outline-danger"
+                            className="btn btn-sm btn-danger"
                             onClick={() => {
                                 ocultarMesaById(objAlarmas.id);
                             }}
@@ -96,7 +96,7 @@ const MainTableAlarms = () => {
                 masDetalle: (
                     <>
                         <button
-                            className="btn btn-sm btn-outline-info"
+                            className="btn btn-sm btn-primary"
                             onClick={() => {
                                 infoAlarmaById(objAlarmas.id);
                             }}
@@ -123,28 +123,30 @@ const MainTableAlarms = () => {
         <div>
             <div className="card card__table mx-auto">
                 <div className="card-header">
-                    <h4 className="card-title text-center">Lista de variables con alarma</h4>
+                    <h4 className="card-title text-center">Histórico total de variables</h4>
                     
                 </div>
                 <div className="card-body ">
-                    <div className="table-responsive-xl">
+                    <div className="table-responsive-lg">
                         {loading ? <Cargando text="Realizando consulta de variables con alarma activada" /> :
                             <MDBDataTableV5
                                 searchLabel={"Buscar"}
                                 infoLabel={['', '-', 'de', '']}
                                 hover
                                 bordered
-                                entriesOptions={[5, 10, 20]}
-                                entries={5}
+                                entriesOptions={[10, 20, 50]}
+                                entries={10}
                                 pagesAmount={4}
                                 data={datatable}
                                 fullPagination
-
+                                // scrollX
+                                // scrollY
                                 exportToCSV
                                 //responsive
                                 //responsiveSm
                                 small
-                            //scrollY
+                                striped
+                                sortable
                             />}
                     </div>
                 </div>
@@ -153,4 +155,6 @@ const MainTableAlarms = () => {
     )
 }
 
-export default MainTableAlarms
+export default TableVariables
+
+

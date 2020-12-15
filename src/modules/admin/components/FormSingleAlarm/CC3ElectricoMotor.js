@@ -3,9 +3,9 @@ import { useState } from 'react';
 import Swal from 'sweetalert2';
 
 
-const FormularioSingleAlarm = ({ setcurvaAconsultar, obtenerVariable, setgraficar }) => {
+const CC3ElectricoMotor = ({ setcurvaAconsultar, obtenerVariable, setgraficar }) => {
   const [form, setForm] = useState({
-    variable: "curva1",
+    variable: "Corriente De Oscilacion",
 
   });
   const [error, setError] = useState(false);
@@ -45,10 +45,6 @@ const FormularioSingleAlarm = ({ setcurvaAconsultar, obtenerVariable, setgrafica
   }
 
 
-  let variables=['curva1','curva2','curva3','curva4','curva5'];
-  
-
-
 
 
 
@@ -60,10 +56,8 @@ const FormularioSingleAlarm = ({ setcurvaAconsultar, obtenerVariable, setgrafica
   return (
     <div className="card  mx-auto">
       <div className="card-header ">
-        <h5 className="card-title">Horno Eléctrico</h5>
-        <div className="card-category">
-          Horno <i className="fas fa-chevron-right"></i>  Bóveda
-        </div>
+        <h6 className="card-title">Eléctrico <i className="fas fa-chevron-right"></i>  Motor</h6>
+        
       </div>
 
       <div className="card-body ">
@@ -80,20 +74,17 @@ const FormularioSingleAlarm = ({ setcurvaAconsultar, obtenerVariable, setgrafica
             <div className="form-group mx-sm-3 mb-2">
               <label htmlFor="inputVariableSingleAlarm">Variable:</label>
               <select id="inputVariableSingleAlarm" className="form-control ml-2" name="variable" onChange={handleChange} value={form.variable}>
-                <option value="curva1">curva1</option>
-                <option value="curva2">curva2</option>
-                <option value="curva3">curva3</option>
-                <option value="curva4">curva4</option>
-                <option value="curva5">curva5</option>
-                
+                <option value="Corriente De Oscilacion">Corriente De Oscilacion</option>
+                <option value="Corriente De Extraccion">Corriente De Extraccion</option>
+                <option value="Corriente De Falsa Barra">Corriente De Falsa Barra</option>
+                <option value="Corriente Tundish">Corriente Tundish</option>
               </select>
             </div>
-            
-              <button type="submit" className="btn btn-success ">Consultar</button>
-            
-
+            <button type="submit" className="btn btn-success ">Consultar</button>
           </div>
         </form>
+
+
 
       </div>
       {consulta === true ? (<div className="card-footer ">
@@ -108,4 +99,5 @@ const FormularioSingleAlarm = ({ setcurvaAconsultar, obtenerVariable, setgrafica
 }
 
 
-export default FormularioSingleAlarm
+export default CC3ElectricoMotor
+

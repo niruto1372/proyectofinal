@@ -1,69 +1,116 @@
 import React from 'react'
 import { Line } from 'react-chartjs-2';
+import SelectNumber from './SelectNumbers';
+import SelectTime from './SelectTime';
+import * as moment from 'moment';
+
+import { Chart } from "react-google-charts";
+
+
 
 const LineChart = ({ curva, loading, obtenerVariable, curvaAconsultar, setcurvaAconsultar }) => {
-  
-  
-
-  
-  
-
-
-
-const state = {
 
 
 
 
-  labels: ['January', 'February', 'March', 'April', 'May'],
-  datasets: [
-    {
-      label: 'Dataset of Months',
-      fill: false,
-      lineTension: 0.1,
-      backgroundColor: 'rgba(75,192,192,0.4)',
-      borderColor: 'rgba(75,192,192,1)',
-      borderCapStyle: 'butt',
-      borderDash: [],
-      borderDashOffset: 0.0,
-      borderJoinStyle: 'miter',
-      pointBorderColor: 'rgba(75,192,192,1)',
-      pointBackgroundColor: '#fff',
-      pointBorderWidth: 1,
-      pointHoverRadius: 5,
-      pointHoverBackgroundColor: 'rgba(75,192,192,1)',
-      pointHoverBorderColor: 'rgba(220,220,220,1)',
-      pointHoverBorderWidth: 2,
-      pointRadius: 1,
-      pointHitRadius: 10,
-      data: [65, 59, 80, 81, 56]
-    }
-  ]
-}
+  const datachartVALUE = {
+
+    value: curva.map((objVariable) => {
+      return {
+        value: objVariable.value,
+      }
+    }),
+  };
+
+
+  const datachartTIME = {
+
+    time: curva.map((objVariable) => {
+      return {
+        time: objVariable.time,
+      }
+    }),
+  };
+
+
+  const datachartTotal = {
+
+    value: curva.map((objVariable) => {
+      return {
+        value: objVariable.value,
+        time: objVariable.time,
+      }
+    }),
+  };
+
+  console.log(datachartTotal);
+
+
+  let objValue = datachartVALUE.value;
+  let objTime = datachartTIME.time;
 
 
 
+  const dataValue = SelectNumber(objValue);
+  const dataTime = SelectTime(objTime);
 
-return (
-  <div>
+
+  const state = {
+
+
+    labels: dataTime,
+    datasets: [
+      {
+        label: ` ${curvaAconsultar}`,
+        //fill: false,
+        lineTension: 0.1,
+        backgroundColor: 'rgba(255, 159, 64, 0.2)',
+        borderColor: 'rgba(255, 159, 64, 1)',
+        borderCapStyle: 'butt',
+        borderDash: [],
+        borderDashOffset: 0.0,
+        borderJoinStyle: 'miter',
+        pointBorderColor: 'rgba(255, 159, 64, 1)',
+        pointBackgroundColor: '#fff',
+        pointBorderWidth: 1,
+        pointHoverRadius: 5,
+        pointHoverBackgroundColor: 'rgba(255, 159, 64, 1)',
+        pointHoverBorderColor: 'rgba(220,220,220,1)',
+        pointHoverBorderWidth: 2,
+        pointRadius: 1,
+        pointHitRadius: 10,
+        maintainAspectRatio: true,
+        data: dataValue
+      }
+    ]
+  }
+
+
+
+  return (
     <div>
-      <Line
-        data={state}
-        options={{
-          title: {
-            display: true,
-            text: 'Average Rainfall per month',
-            fontSize: 20
-          },
-          legend: {
-            display: true,
-            position: 'right'
-          }
-        }}
-      />
+      <div>
+        <Line
+          data={state}
+          options={{
+            title: {
+              display: true,
+              text: ` ${curvaAconsultar}`,
+              fontSize: 20
+            },
+            legend: {
+              display: true,
+              position: 'top'
+            }
+          }}
+        />
+
+
+        
+      </div>
+
     </div>
-  </div>
-)
+  )
 }
 
 export default LineChart

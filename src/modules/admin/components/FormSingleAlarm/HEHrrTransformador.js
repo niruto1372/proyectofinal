@@ -1,11 +1,12 @@
+
 import React from 'react'
 import { useState } from 'react';
 import Swal from 'sweetalert2';
 
 
-const FormularioSingleAlarm = ({ setcurvaAconsultar, obtenerVariable, setgraficar }) => {
+const HEHrrTransformador = ({ setcurvaAconsultar, obtenerVariable, setgraficar }) => {
   const [form, setForm] = useState({
-    variable: "curva1",
+    variable: "Inclinacion",
 
   });
   const [error, setError] = useState(false);
@@ -45,12 +46,6 @@ const FormularioSingleAlarm = ({ setcurvaAconsultar, obtenerVariable, setgrafica
   }
 
 
-  let variables=['curva1','curva2','curva3','curva4','curva5'];
-  
-
-
-
-
 
 
 
@@ -62,7 +57,7 @@ const FormularioSingleAlarm = ({ setcurvaAconsultar, obtenerVariable, setgrafica
       <div className="card-header ">
         <h5 className="card-title">Horno Eléctrico</h5>
         <div className="card-category">
-          Horno <i className="fas fa-chevron-right"></i>  Bóveda
+          HRR <i className="fas fa-chevron-right"></i>  Transformador
         </div>
       </div>
 
@@ -80,11 +75,10 @@ const FormularioSingleAlarm = ({ setcurvaAconsultar, obtenerVariable, setgrafica
             <div className="form-group mx-sm-3 mb-2">
               <label htmlFor="inputVariableSingleAlarm">Variable:</label>
               <select id="inputVariableSingleAlarm" className="form-control ml-2" name="variable" onChange={handleChange} value={form.variable}>
-                <option value="curva1">curva1</option>
-                <option value="curva2">curva2</option>
-                <option value="curva3">curva3</option>
-                <option value="curva4">curva4</option>
-                <option value="curva5">curva5</option>
+                <option value="Inclinacion">Inclinacion</option>
+                <option value="Valvula F1">Valvula F1</option>
+                <option value="Valvula F2">Valvula F2</option>
+                <option value="Valvula F3">Valvula F3</option>
                 
               </select>
             </div>
@@ -96,6 +90,7 @@ const FormularioSingleAlarm = ({ setcurvaAconsultar, obtenerVariable, setgrafica
         </form>
 
       </div>
+      
       {consulta === true ? (<div className="card-footer ">
         <hr />
         <div className="stats">
@@ -108,4 +103,6 @@ const FormularioSingleAlarm = ({ setcurvaAconsultar, obtenerVariable, setgrafica
 }
 
 
-export default FormularioSingleAlarm
+export default HEHrrTransformador
+
+

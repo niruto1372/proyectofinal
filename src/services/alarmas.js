@@ -9,6 +9,12 @@ export const getAlarmas = async () => {
 };
 
 
+export const getVariables = async () => { 
+  const response = await fetch(`${URL_BACKEND}/api/alarms`);
+  const json = await response.json();
+  return json;
+};
+
 
 export const deleteAlarmaById = async (id) => {
 

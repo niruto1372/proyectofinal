@@ -1,9 +1,10 @@
+
 import React from 'react'
 import { useState } from 'react';
 import Swal from 'sweetalert2';
 
 
-const FormularioSingleAlarm = ({ setcurvaAconsultar, obtenerVariable, setgraficar }) => {
+const HEHornoBoveda = ({ setcurvaAconsultar, obtenerVariable, setgraficar }) => {
   const [form, setForm] = useState({
     variable: "curva1",
 
@@ -60,10 +61,8 @@ const FormularioSingleAlarm = ({ setcurvaAconsultar, obtenerVariable, setgrafica
   return (
     <div className="card  mx-auto">
       <div className="card-header ">
-        <h5 className="card-title">Horno Eléctrico</h5>
-        <div className="card-category">
-          Horno <i className="fas fa-chevron-right"></i>  Bóveda
-        </div>
+        <h6 className="card-title">Horno <i className="fas fa-chevron-right"></i>  Bóveda</h6>
+        
       </div>
 
       <div className="card-body ">
@@ -108,4 +107,6 @@ const FormularioSingleAlarm = ({ setcurvaAconsultar, obtenerVariable, setgrafica
 }
 
 
-export default FormularioSingleAlarm
+export default HEHornoBoveda
+
+

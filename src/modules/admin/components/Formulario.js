@@ -39,19 +39,16 @@ const Formulario = () => {
 
   return (
     <div className="card card__table mx-auto">
-      {/* <div className="card-header">
-                <h4 className="card-title text-center">Realiza la seleccion para la variable a consultar:</h4>
-            </div> */}
+      <div className="card-header">
+        <h4 className="card-title ">Realiza la selección de la variable a consultar:</h4>
+      </div>
       <div className="card-body ">
         <form onSubmit={handleSubmit}>
           {error === true ? (
             <div class="alert alert-danger " role="alert">
               <strong>Error!</strong> Debes llenar todos los campos.
-              
             </div>
           ) : null}
-
-
 
 
           <div className="form-row">
@@ -59,8 +56,11 @@ const Formulario = () => {
               <label htmlFor="inputVariable">Variable</label>
               <select id="inputVariable" className="form-control" name="variable" onChange={handleChange} value={form.variable}>
 
-                <option value="01">curva1</option>
-                <option value="02">curva2</option>
+                <option value="curva1">curva1</option>
+                <option value="curva2">curva2</option>
+                <option value="curva3">curva3</option>
+                <option value="curva4">curva4</option>
+                <option value="curva5">curva5</option>
               </select>
             </div>
             <div className="form-group col-md-4">
@@ -91,19 +91,12 @@ const Formulario = () => {
               <input type="datetime-local" className="form-control" id="inputFHInicio" name="hinicio" onChange={handleChange} value={form.hinicio} />
             </div>
             <div className="form-group col-md-6">
-              <label htmlFor="inputFHFinal">Fecha y Hora de inicio</label>
+              <label htmlFor="inputFHFinal">Fecha y Hora Final</label>
               <input type="datetime-local" className="form-control" id="inputFHFinal" name="hfinal" onChange={handleChange} value={form.hfinal} />
             </div>
 
           </div>
-          {/* <div className="form-group">
-                        <div className="form-check">
-                            <input className="form-check-input" type="checkbox" id="gridCheck" />
-                            <label className="form-check-label" for="gridCheck">
-                                Check me out
-                            </label>
-                        </div>
-                    </div> */}
+          
           <button type="submit" className="btn btn-success">Consultar</button>
         </form>
       </div>

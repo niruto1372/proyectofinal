@@ -21,9 +21,6 @@ const RouterMain = () => {
                 <Route path={"/auth"} component={RouterAuth} />
                 <RutaPrivada path={"/admin"} componente={RouterAdmin} />
                 <RutaPrivada path={"/"} componente={RouterMantenedores} />
-
-                
-
             </Switch>
         </Router>
     )

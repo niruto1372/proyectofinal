@@ -16,61 +16,72 @@ const Main = () => {
 
   return (
     <>
+      <div className="content" >
+        <Router>
 
-      <Router>
-        <div className="headerMenu">
-          <nav className="headerMenu__nav">
-            <ul className="headerMenu__lista">
-              <li className="headerMenu__item">
-                <Link
-                  exact
-                  to={"/pMetalico"}
-                  className="btn btn-primary headerMenu__btn"
-                >
-                  Patio Metálico
+          <div className="row mx-auto mx-0">
+            <div className="col-lg-3 col-md-3 col-sm-5 mx-automx-0">
+              <Link
+                exact
+                to={"/pMetalico"}
+                className="btn btn-info headerMenu__btn"
+              >
+                Patio Metálico
                 </Link>
-              </li>
-              <li className="headerMenu__item">
-                <Link
-                  exact
-                  to={"/hElectrico"}
-                  className="btn btn-primary  headerMenu__btn"
-                >
-                  Horno Eléctrico
+            </div>
+            <div className="col-lg-3 col-md-3 col-sm-5 mx-auto mx-0">
+              <Link
+                exact
+                to={"/hElectrico"}
+                className="btn btn-info  headerMenu__btn"
+              >
+                Horno Eléctrico
                 </Link>
-              </li>
-              <li className="headerMenu__item">
-                <Link
-                  exact
-                  to={"/hCuchara"}
-                  className="btn btn-primary  headerMenu__btn"
-                >
-                  Horno Cuchara
+            </div>
+            <div className="col-lg-3 col-md-3 col-sm-5 mx-auto mx-0">
+              <Link
+                exact
+                to={"/hCuchara"}
+                className="btn btn-info  headerMenu__btn"
+              >
+                Horno Cuchara
                 </Link>
-              </li>
-              <li className="headerMenu__item">
-                <Link
-                  exact
-                  to={"/CC3"}
-                  className="btn btn-primary headerMenu__btn"
-                >
-                  CC3
+            </div>
+            <div className="col-lg-3 col-md-3 col-sm-5 mx-auto mx-0">
+              <Link
+                exact
+                to={"/CC3"}
+                className="btn btn-info headerMenu__btn"
+              >
+                CC3
                 </Link>
-              </li>
-            </ul>
-          </nav>
+            </div>
+
+          </div>
+          <br />
+          <div>
+            <div className="col-lg-10 mx-auto mx-0">
+              <Switch>
+                <Route path={"/pMetalico"} component={Pmetalico} />
+                <Route path={"/hElectrico"} component={Helectrico} />
+                <Route path={"/hCuchara"} component={Hcuchara} />
+                <Route path={"/CC3"} component={CC3} />
+                <Route component={NotFound} />
+              </Switch>
+            </div>
+          </div>
+
+        </Router>
+
+        <div className="row  mx-auto mx-0">
+          <div className="col-lg-10 mx-auto mx-0">
+            <MainTableAlarms />
+          </div>
+
         </div>
-        <br />
-        <Switch>
-          <Route path={"/pMetalico"} component={Pmetalico} />
-          <Route path={"/hElectrico"} component={Helectrico} />
-          <Route path={"/hCuchara"} component={Hcuchara} />
-          <Route path={"/CC3"} component={CC3} />
-          <Route component={NotFound} />
-        </Switch>
-      </Router>
+      </div>
 
-      <MainTableAlarms />
+
     </>
   );
 };

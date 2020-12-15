@@ -54,7 +54,7 @@ const Pmetalico = () => {
                   </tr>
                   <tr>
                     <td scope="row">
-                      <i class="fas fa-circle fa__circle_redcrayola"></i>
+                      <i className="fas fa-circle fa__circle_redcrayola"></i>
                       <Link
                         exact
                         to={"/hCuchara/geuromec/subsistema"}

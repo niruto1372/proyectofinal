@@ -31,7 +31,7 @@ const TableSingleVariable = ({curva, loading, obtenerVariable, curvaAconsultar,s
                         //showConfirmButton:false,
                     }
                 );
-                console.log(`despues de eliminar, antes de ejecutar obtenerVariable: ${curvaAconsultar}`);
+                
                 obtenerVariable(`${curvaAconsultar}`);
 
             });
@@ -47,7 +47,8 @@ const TableSingleVariable = ({curva, loading, obtenerVariable, curvaAconsultar,s
   const datatable = {
     columns: [
       { label: "Eliminar", field: "ocultar" },
-      { label: "Variable Observada", field: "variable" },
+      {label:"ID", field:"id"},      
+      { label: "Variable", field: "variable" },
       { label: "Valor", field: "value" },      
       { label: "Fecha y Hora de Inicio", field: "time" },
     ],
@@ -70,12 +71,12 @@ const TableSingleVariable = ({curva, loading, obtenerVariable, curvaAconsultar,s
     }),
   };
 
-  
+
   return (
 
-    <div className="card  mx-auto">
-      <div class="card-header">
-        <h4 class="card-title text-center">Histórico de curva seleccionada</h4>
+    <div className="card  mx-auto ml-2">
+      <div className="card-header">
+        <h4 className="card-title text-center">Histórico de variable seleccionada: {curvaAconsultar}</h4>
 
       </div>
 
@@ -89,14 +90,14 @@ const TableSingleVariable = ({curva, loading, obtenerVariable, curvaAconsultar,s
               bordered
               entriesOptions={[10, 20, 30]}
               entries={10}
-              pagesAmount={4}
+              pagesAmount={5}
               data={datatable}
               fullPagination
 
               responsive
               responsiveSm
               small
-            //scrollY
+              //scrollY
             />}
         </div>
       </div>
