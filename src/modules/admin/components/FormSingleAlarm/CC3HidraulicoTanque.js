@@ -55,10 +55,8 @@ const CC3HidraulicoTanque = ({ setcurvaAconsultar, obtenerVariable, setgraficar 
   return (
     <div className="card  mx-auto">
       <div className="card-header ">
-        <h5 className="card-title">COCO 3</h5>
-        <div className="card-category">
-          Hidráulico <i className="fas fa-chevron-right"></i>  Tanque
-        </div>
+        <h6 className="card-title">Sistema: Hidráulico </h6>
+        <p className="card-category">Subsistema: Tanque</p>
       </div>
 
       <div className="card-body ">
@@ -72,18 +70,21 @@ const CC3HidraulicoTanque = ({ setcurvaAconsultar, obtenerVariable, setgraficar 
 
 
           <div className="form">
-            <div className="form-group mx-sm-3 mb-2">
+            <div className="form-group">
               <label htmlFor="inputVariableSingleAlarm">Variable:</label>
-              <select id="inputVariableSingleAlarm" className="form-control ml-2" name="variable" onChange={handleChange} value={form.variable}>
+              <select id="inputVariableSingleAlarm" className="form-control" name="variable" onChange={handleChange} value={form.variable}>
                 <option value="Presion Hidraulica">Presion Hidraulica</option>
                 <option value="Temperatura">Temperatura</option>
                 <option value="Nivel Aceite">Nivel Aceite</option>
-                
+
               </select>
             </div>
-            
-              <button type="submit" className="btn btn-success ">Consultar</button>
-            
+
+            <div className="row">
+              <div className="update  ml-auto mr-auto">
+                <button type="submit" className="btn btn-success  btn-round ">Consultar</button>
+              </div>
+            </div>
 
           </div>
         </form>

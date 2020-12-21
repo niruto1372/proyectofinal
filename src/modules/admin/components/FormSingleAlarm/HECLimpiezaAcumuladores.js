@@ -3,10 +3,9 @@ import React from 'react'
 import { useState } from 'react';
 import Swal from 'sweetalert2';
 
-
-const HECHPrincipal = ({ setcurvaAconsultar, obtenerVariable, setgraficar }) => {
+const HECLimpiezaAcumuladores = ({ setcurvaAconsultar, obtenerVariable, setgraficar }) => {
   const [form, setForm] = useState({
-    variable: "Temperatura Aceite",
+    variable: "Baja Presion 1",
 
   });
   const [error, setError] = useState(false);
@@ -56,10 +55,8 @@ const HECHPrincipal = ({ setcurvaAconsultar, obtenerVariable, setgraficar }) => 
   return (
     <div className="card  mx-auto">
       <div className="card-header ">
-        <h5 className="card-title">Horno Eléctrico</h5>
-        <div className="card-category">
-          Central Hidráulica <i className="fas fa-chevron-right"></i>  Principal
-        </div>
+        <h6 className="card-title">Sistema: Cámaras de Limpieza </h6>
+        <p className="card-category">Subsistema: Acumuladores</p>
       </div>
 
       <div className="card-body ">
@@ -73,23 +70,27 @@ const HECHPrincipal = ({ setcurvaAconsultar, obtenerVariable, setgraficar }) => 
 
 
           <div className="form">
-            <div className="form-group mx-sm-3 mb-2">
+            <div className="form-group ">
               <label htmlFor="inputVariableSingleAlarm">Variable:</label>
-              <select id="inputVariableSingleAlarm" className="form-control ml-2" name="variable" onChange={handleChange} value={form.variable}>
-                <option value="Temperatura Aceite">Temperatura Aceite</option>
-                <option value="Saturacion De Filtro">Saturacion De Filtro</option>
+              <select id="inputVariableSingleAlarm" className="form-control " name="variable" onChange={handleChange} value={form.variable}>
+                <option value="Baja Presion 1">Baja Presion 1</option>
+                <option value="Baja Presion 1">Baja Presion 2</option>
                 
               </select>
             </div>
             
-              <button type="submit" className="btn btn-success ">Consultar</button>
-            
+            <div className="row">
+              <div className="update  ml-auto mr-auto">
+                <button type="submit" className="btn btn-success  btn-round ">Consultar</button>
+              </div>
+            </div>
 
           </div>
         </form>
 
       </div>
-      
+
+
       
       {consulta === true ? (<div className="card-footer ">
         <hr />
@@ -103,7 +104,7 @@ const HECHPrincipal = ({ setcurvaAconsultar, obtenerVariable, setgraficar }) => 
 }
 
 
-export default HECHPrincipal
+export default HECLimpiezaAcumuladores
 
 
 

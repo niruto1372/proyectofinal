@@ -7,7 +7,7 @@ import TableSingleVariable from '../components/TableSingleVariable'
 import LineChart from './../components/LineChart'
 import Cargando from './../components/Cargando'
 import HECarroCestaCarro1 from '../components/FormSingleAlarm/HECarroCestaCarro1'
-import HECHAcumuladores from '../components/FormSingleAlarm/HECHAcumuladores'
+import HECHAcumuladores from '../components/FormSingleAlarm/HECLimpiezaAcumuladores'
 import HEHornoBoveda from '../components/FormSingleAlarm/HEHornoBoveda'
 import HEHrrDucto from '../components/FormSingleAlarm/HEHrrDucto'
 

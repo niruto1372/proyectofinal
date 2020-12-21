@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-import NotFound from "./../../404/NotFound";
+// import NotFound from "./../../404/NotFound";
 import Cizalla from "./../../SubSystem/Pmetalico/Cizalla";
 
 
@@ -33,15 +33,15 @@ const Pmetalico = () => {
                 </thead>
                 <tbody>
                   <tr>
-                    <td scope="row">
-                      <i className="fas fa-circle fa__circle_redcrayola"></i>
+                    <td >
+                      {/* <i className="fas fa-circle fa__circle_redcrayola"></i> */}
 
                       <Link
-                        exact
-                        to={"/pMetalico/cizalla/subsistema"}
+
+                        to={"/pMetalico/chidraulica/subsistema"}
                         className=""
                       >
-                        Cizalla
+                        Central Hidráulica
                       </Link>
                     </td>
 
@@ -53,17 +53,17 @@ const Pmetalico = () => {
                     <td>1</td>
                   </tr>
                   <tr>
-                    <td scope="row">
-                      <i className="fas fa-circle fa__circle_seagreen"></i>
+                    <td >
+                      {/* <i className="fas fa-circle fa__circle_seagreen"></i> */}
                       <Link
-                        exact
-                        to={"/pMetalico/geuromec/subsistema"}
+
+                        to={"/pMetalico/climpieza/subsistema"}
                         className=""
                       >
-                        Grua euromec
+                        Sistema de Limpieza
                       </Link>
-                    
-                </td>
+
+                    </td>
                     <td>8/8</td>
                     <td>1</td>
                     <td>27 min</td>
@@ -71,44 +71,7 @@ const Pmetalico = () => {
                     <td>-</td>
                     <td>-</td>
                   </tr>
-                  <tr>
-                    <td scope="row">
-                      <i className="fas fa-circle fa__circle_seagreen"></i>
-                      <Link
-                        exact
-                        to={"/pMetalico/balanza/subsistema"}
-                        className=""
-                      >
-                        Balanza
-                      </Link>
-                    
-                </td>
-                    <td>4/5</td>
-                    <td>0</td>
-                    <td>-</td>
-                    <td>1</td>
-                    <td>-</td>
-                    <td>-</td>
-                  </tr>
-                  <tr>
-                    <td scope="row">
-                      <i className="fas fa-circle fa__circle_seagreen"></i>
-                      <Link
-                        exact
-                        to={"/pMetalico/slimpieza/subsistema"}
-                        className=""
-                      >
-                        Sistema de limpieza
-                      </Link>
-                    
-                </td>
-                    <td>2/3</td>
-                    <td>0</td>
-                    <td>-</td>
-                    <td>1</td>
-                    <td>-</td>
-                    <td>-</td>
-                  </tr>
+                  
                 </tbody>
               </table>
             </div>
@@ -120,11 +83,9 @@ const Pmetalico = () => {
 
         <br />
         <Switch>
-          <Route path={"/pMetalico/cizalla/subsistema"} component={Cizalla} />
-          <Route path={"/pMetalico/geuromec/subsistema"} component={Cizalla} />
-          <Route path={"/pMetalico/balanza/subsistema"} component={Cizalla} />
-          <Route path={"/pMetalico/slimpieza/subsistema"} component={Cizalla} />
-          
+          <Route path={"/pMetalico/chidraulica/subsistema"} component={Cizalla} />
+          <Route path={"/pMetalico/climpieza/subsistema"} component={Cizalla} />
+
           {/* <Route component={NotFound} /> */}
         </Switch>
       </Router>

@@ -54,8 +54,8 @@ const CizallaSisLimpiezaAglamper = ({ setcurvaAconsultar, obtenerVariable, setgr
   return (
     <div className="card  mx-auto">
       <div className="card-header ">
-        <h6 className="card-title">Sistema de Limpieza <i className="fas fa-chevron-right"></i>  Aglamper</h6>
-        
+        <h6 className="card-title">Sistema: Cizalla </h6>
+        <p className="card-category">Subsistema: Sistema de Limpieza</p>
       </div>
 
       <div className="card-body ">
@@ -69,9 +69,9 @@ const CizallaSisLimpiezaAglamper = ({ setcurvaAconsultar, obtenerVariable, setgr
 
 
           <div className="form">
-            <div className="form-group mx-sm-3 mb-2">
+            <div className="form-group ">
               <label htmlFor="CizallaSisLimpiezaAglamper">Variable:</label>
-              <select id="CizallaSisLimpiezaAglamper" className="form-control ml-2" name="variable" onChange={handleChange} value={form.variable}>
+              <select id="CizallaSisLimpiezaAglamper" className="form-control " name="variable" onChange={handleChange} value={form.variable}>
                 <option value="Corriente De Motor Faja Metalica">Corriente De Motor Faja Metalica</option>
                 <option value="Corriente De Motor Tambor Rotativo">Corriente De Motor Tambor Rotativo</option>
                 <option value="Corriente Motor Finos 1">Corriente Motor Finos 1</option>
@@ -80,8 +80,11 @@ const CizallaSisLimpiezaAglamper = ({ setcurvaAconsultar, obtenerVariable, setgr
               </select>
             </div>
             
-              <button type="submit" className="btn btn-success ">Consultar</button>
-            
+            <div className="row">
+              <div className="update  ml-auto mr-auto">
+                <button type="submit" className="btn btn-success  btn-round ">Consultar</button>
+              </div>
+            </div>
 
           </div>
         </form>

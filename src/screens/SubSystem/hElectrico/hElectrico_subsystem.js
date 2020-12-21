@@ -4,6 +4,8 @@ import NotFound from "./../../404/NotFound";
 import MainTableSubsystem from './../../SubSystem/MainTableSubsystem';
 
 const hElectrico_subsystem = () => {
+    const data=["corriente de oscilacion","corriente de extraccion", "Corriente de falsa barra", "Corriente Tundish"];
+
     return (
         <div>
             <div className="card card__table mx-auto">
@@ -19,39 +21,39 @@ const hElectrico_subsystem = () => {
 
                                 <ul className="list-group ">
                                     <li className="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
-                                        Grua Euromec
-                                        <span className="badge badge-secondary badge-pill">1</span>
+                                        Horno
+                                        <span className="badge badge-secondary badge-pill">6</span>
                                     </li>
                                     <li className="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
                                         
-                                            Balanza
+                                            Carro Cesta
                                         
-                                        <span className="badge badge-secondary badge-pill">4</span>
+                                        <span className="badge badge-secondary badge-pill">8</span>
                                     </li>
                                     <li className="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
                                        
-                                            Cizalla
+                                            Castillo
                                         
-                                        <span className="badge badge-secondary badge-pill">0</span>
+                                        <span className="badge badge-secondary badge-pill">2</span>
                                     </li>
                                     <li className="list-group-item list-group-item-action d-flex justify-content-between align-items-center ">
                                         
-                                            Portal de Radiación 
+                                            Cámaras de Limpieza
                                         
-                                        <span className="badge badge-secondary badge-pill">3</span>
+                                        <span className="badge badge-secondary badge-pill">2</span>
                                     </li>
                                     <li className="list-group-item list-group-item-action d-flex justify-content-between align-items-center ">
                                         
-                                            Sistema de Limpieza
+                                           HRR
                                         
-                                        <span className="badge badge-secondary badge-pill">1</span>
+                                        <span className="badge badge-secondary badge-pill">8</span>
                                     </li>
                                 </ul>
 
 
                             </div>
                             <div className="col-md-9 col-sm-12">
-                                <MainTableSubsystem/>
+                                <MainTableSubsystem data={data}/>
                             </div>
                         </div>
                     </div>

@@ -1,9 +1,9 @@
 import React from 'react'
 
-const MainTableSubsystem = () => {
+const MainTableSubsystem = ({data}) => {
   return (
     <div>
-      <div className="table-responsive-md">
+      <div className="table-responsive-lg">
         <table className="table table-bordered table-hover text-center table-sm ">
           <thead>
             <tr>
@@ -27,8 +27,8 @@ const MainTableSubsystem = () => {
           <tbody>
             <tr>
               <td >
-                <i className="fas fa-circle fa__circle_redcrayola"></i>
-                    General
+                
+                    {data[0]}
                   </td>
 
               <td>4/4</td>
@@ -40,8 +40,8 @@ const MainTableSubsystem = () => {
             </tr>
             <tr>
               <td >
-                <i className="fas fa-circle fa__circle_seagreen"></i>
-                    C. Hidráulicos
+                
+                {data[1]}
                 </td>
               <td>3/3</td>
               <td>1</td>
@@ -52,8 +52,8 @@ const MainTableSubsystem = () => {
             </tr>
             <tr>
               <td >
-                <i className="fas fa-circle fa__circle_seagreen"></i>
-                    Bombas
+               
+                {data[2]}
                 </td>
               <td>3/3</td>
               <td>1</td>
@@ -64,8 +64,8 @@ const MainTableSubsystem = () => {
             </tr>
             <tr>
               <td >
-                <i className="fas fa-circle fa__circle_seagreen"></i>
-                    Lubricación
+                
+                {data[3]}
                 </td>
               <td>4/4</td>
               <td>-</td>
@@ -74,18 +74,7 @@ const MainTableSubsystem = () => {
               <td>2</td>
               <td>-</td>
             </tr>
-            <tr>
-              <td >
-                <i className="fas fa-circle fa__circle_seagreen"></i>
-                    Refrigeración
-                </td>
-              <td>1/1</td>
-              <td>-</td>
-              <td>-</td>
-              <td>0</td>
-              <td>-</td>
-              <td>-</td>
-            </tr>
+            
           </tbody>
         </table>
       </div>

@@ -2,6 +2,8 @@ import React from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import NotFound from "./../../404/NotFound";
 import cc3_subsystem from "./../../SubSystem/CC3/cc3_subsystem";
+import cc3_electrico from "./../../SubSystem/CC3/cc3_subsystem";
+import cc3_hidraulico from "./../../SubSystem/CC3/cc3_subsystem";
 
 
 const Pmetalico = () => {
@@ -33,15 +35,15 @@ const Pmetalico = () => {
                 </thead>
                 <tbody>
                   <tr>
-                    <td scope="row">
-                      <i className="fas fa-circle fa__circle_seagreen"></i>
+                    <td >
+                      {/* <i className="fas fa-circle fa__circle_seagreen"></i> */}
 
                       <Link
-                        exact
+
                         to={"/cc3/cizalla/subsistema"}
                         className=""
                       >
-                        Balanza 0
+                        Eléctrico
                       </Link>
                     </td>
 
@@ -53,17 +55,17 @@ const Pmetalico = () => {
                     <td>2</td>
                   </tr>
                   <tr>
-                    <td scope="row">
-                      <i className="fas fa-circle fa__circle_seagreen"></i>
+                    <td >
+                      {/* <i className="fas fa-circle fa__circle_seagreen"></i> */}
                       <Link
-                        exact
+
                         to={"/cc3/geuromec/subsistema"}
                         className=""
                       >
-                        Balanza 1
+                        Hidráulico
                       </Link>
-                    
-                </td>
+
+                    </td>
                     <td>6/8</td>
                     <td>1</td>
                     <td>07 min</td>
@@ -72,17 +74,17 @@ const Pmetalico = () => {
                     <td>-</td>
                   </tr>
                   <tr>
-                    <td scope="row">
-                      <i className="fas fa-circle fa__circle_seagreen"></i>
+                    <td >
+                      {/* <i className="fas fa-circle fa__circle_seagreen"></i> */}
                       <Link
-                        exact
+
                         to={"/cc3/balanza/subsistema"}
                         className=""
                       >
-                        Balanza 2
+                        Mecánico
                       </Link>
-                    
-                </td>
+
+                    </td>
                     <td>3/8</td>
                     <td>2</td>
                     <td>19</td>
@@ -91,17 +93,17 @@ const Pmetalico = () => {
                     <td>-</td>
                   </tr>
                   <tr>
-                    <td scope="row">
-                      <i className="fas fa-circle fa__circle_redcrayola"></i>
+                    <td >
+                      {/* <i className="fas fa-circle fa__circle_seagreen"></i> */}
                       <Link
-                        exact
+
                         to={"/cc3/slimpieza/subsistema"}
                         className=""
                       >
-                        Drenaje
+                        Proceso
                       </Link>
-                    
-                </td>
+
+                    </td>
                     <td>5/6</td>
                     <td>7</td>
                     <td>2</td>
@@ -120,11 +122,11 @@ const Pmetalico = () => {
 
         <br />
         <Switch>
-          <Route path={"/cc3/cizalla/subsistema"} component={cc3_subsystem} />
-          <Route path={"/cc3/geuromec/subsistema"} component={cc3_subsystem} />
+          <Route path={"/cc3/cizalla/subsistema"} component={cc3_electrico} />
+          <Route path={"/cc3/geuromec/subsistema"} component={cc3_hidraulico} />
           <Route path={"/cc3/balanza/subsistema"} component={cc3_subsystem} />
           <Route path={"/cc3/slimpieza/subsistema"} component={cc3_subsystem} />
-          
+
           {/* <Route component={NotFound} /> */}
         </Switch>
       </Router>

@@ -56,15 +56,57 @@ const MainTableAlarms = () => {
     }
 
     const infoAlarmaById = (id) => {
-        alarmas.filter((id) => {
+        //alarmas.filter((id) => {
             Swal.fire(
                 ` Valor fuera de rango Inferior`,
                 'Revisar qué tan inestable se encuentra en las últimas 24 horas',
                 'question'
             )
-        })
+        //})
 
     }
+
+
+    const generarOMbyId = (id) => {
+        
+        Swal.mixin({
+            input: 'text',
+            confirmButtonText: 'Siguiente &rarr;',
+            showCancelButton: true,
+            cancelButtonText: "Cancelar",
+            progressSteps: ['1', '2', '3']
+          }).queue([
+            {
+              title: 'Generar Orden de Mantenimiento',
+              text: 'Ingresa tu nombre'
+            },
+            'Ingresa el área a la que perteneces',
+            '¿Cuál es la razón para generar la OM?'
+          ]).then((result) => {
+            if (result.value) {
+              const answers = JSON.stringify(result.value)
+              Swal.fire({
+                title: '¿Estas seguro de generar la OM?',
+                html: `
+                  Tus respuestas son:
+                  <pre><code>${answers}</code></pre>
+                `,
+                confirmButtonText: 'Generar OM',
+                showCancelButton: true,
+                cancelButtonText: "Cancelar"
+              }).then((result) => {
+                if (result.isConfirmed) {
+                  Swal.fire(
+                    '¡Hecho!',
+                    'Has generado exitosamente una orden de mantenimiento ',
+                    'success'
+                  )
+                }
+              })
+                         
+            }
+          })
+    };
 
     const datatable = {
         columns: [
@@ -76,7 +118,7 @@ const MainTableAlarms = () => {
             { label: "Valor", field: "value" },
             { label: "Mas detalle", field: "masDetalle" },
             { label: "Fecha y Hora de Inicio", field: "time" },
-            // { label: "Generar OM", field: "generarOM" },
+             { label: "Generar OM", field: "generarOM" },
         ],
         rows: alarmas.map((objAlarmas) => {
             return {
@@ -105,13 +147,17 @@ const MainTableAlarms = () => {
                         </button>
                     </>
                 ),
-                // generarOM: (
-                //     <>
-                //         <button className="btn btn-sm btn-outline-success">
-                //             <i className="fas fa-play-circle"></i>
-                //         </button>
-                //     </>
-                // ),
+                generarOM: (
+                    <>
+                        <button className="btn btn-sm btn-outline-success"
+                        onClick={() => {
+                            generarOMbyId(objAlarmas.id);
+                        }}
+                        >
+                            <i className="fas fa-play-circle"></i>
+                        </button>
+                    </>
+                ),
             }
         }),
     };
@@ -127,7 +173,7 @@ const MainTableAlarms = () => {
                     
                 </div>
                 <div className="card-body ">
-                    <div className="table-responsive-xl">
+                    <div className="table-responsive-lg">
                         {loading ? <Cargando text="Realizando consulta de variables con alarma activada" /> :
                             <MDBDataTableV5
                                 searchLabel={"Buscar"}
@@ -144,7 +190,7 @@ const MainTableAlarms = () => {
                                 //responsive
                                 //responsiveSm
                                 small
-                            //scrollY
+                                //scrollY
                             />}
                     </div>
                 </div>

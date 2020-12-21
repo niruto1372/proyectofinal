@@ -4,52 +4,55 @@ import Swal from "sweetalert2";
 import { deleteAlarmaById } from '../../../services/alarmas';
 import Cargando from './Cargando';
 
-const TableSingleVariable = ({curva, loading, obtenerVariable, curvaAconsultar,setcurvaAconsultar}) => {
-  
+const TableSingleVariable = ({ curva, loading, obtenerVariable, curvaAconsultar, setcurvaAconsultar }) => {
+
 
 
   const eliminarVariableById = (id) => {
 
     Swal.fire({
-        title: '¿Estas seguro?',
-        text: "¡No podrás deshacer los cambios!",
-        icon: 'warning',
-        showCancelButton: true,
-        confirmButtonColor: '#EB1651',
-        cancelButtonColor: '#595856',
-        confirmButtonText: 'Sí, eliminar!',
-        cancelButtonText: "Cancelar"
+      title: '¿Estas seguro?',
+      text: "¡No podrás deshacer los cambios!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#EB1651',
+      cancelButtonColor: '#595856',
+      confirmButtonText: 'Sí, eliminar!',
+      cancelButtonText: "Cancelar"
     }).then((rpta) => {
-        if (rpta.value) {
-            deleteAlarmaById(id).then((rpta) => {
-                Swal.fire(
-                    {
-                        title: '¡Eliminado!',
-                        text: 'Alarma eliminada satisfactoriamente.',
-                        icon: 'success',
-                        timer: 2000,
-                        //showConfirmButton:false,
-                    }
-                );
-                
-                obtenerVariable(`${curvaAconsultar}`);
+      if (rpta.value) {
+        deleteAlarmaById(id).then((rpta) => {
+          Swal.fire(
+            {
+              title: '¡Eliminado!',
+              text: 'Alarma eliminada satisfactoriamente.',
+              icon: 'success',
+              timer: 2000,
+              //showConfirmButton:false,
+            }
+          );
 
-            });
+          obtenerVariable(`${curvaAconsultar}`);
 
-        }
+        });
+
+      }
 
     })
 
 
-}
+  }
 
 
   const datatable = {
     columns: [
       { label: "Eliminar", field: "ocultar" },
-      {label:"ID", field:"id"},      
+      { label: "ID", field: "id" },
+      { label: "Area", field: "area" },
+      { label: "Sistema", field: "system" },
+      // { label: "Subsistema", field: "subsystem" },
       { label: "Variable", field: "variable" },
-      { label: "Valor", field: "value" },      
+      { label: "Valor", field: "value" },
       { label: "Fecha y Hora de Inicio", field: "time" },
     ],
     rows: curva.map((objVariable) => {
@@ -57,16 +60,16 @@ const TableSingleVariable = ({curva, loading, obtenerVariable, curvaAconsultar,s
         ...objVariable,
         ocultar: (
           <>
-              <button
-                  className="btn btn-sm btn-outline-danger"
-                  onClick={() => {
-                    eliminarVariableById(objVariable.id);
-                  }}
-              >
-                  <i className="fas fa-minus-circle"></i>
-              </button>
+            <button
+              className="btn btn-sm btn-outline-danger"
+              onClick={() => {
+                eliminarVariableById(objVariable.id);
+              }}
+            >
+              <i className="fas fa-minus-circle"></i>
+            </button>
           </>
-      ),
+        ),
       }
     }),
   };
@@ -97,7 +100,7 @@ const TableSingleVariable = ({curva, loading, obtenerVariable, curvaAconsultar,s
               responsive
               responsiveSm
               small
-              //scrollY
+            //scrollY
             />}
         </div>
       </div>

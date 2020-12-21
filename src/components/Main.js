@@ -16,51 +16,54 @@ const Main = () => {
 
   return (
     <>
-      <div className="content" >
+      <div className="container" >
         <Router>
 
-          <div className="row mx-auto mx-0">
-            <div className="col-lg-3 col-md-3 col-sm-5 mx-automx-0">
+          <div className="row text-center">
+
+            <div className="col-lg-3 col-md-6 col-sm-6 ">
               <Link
-                exact
+
                 to={"/pMetalico"}
                 className="btn btn-info headerMenu__btn"
               >
-                Patio Metálico
+                Cizalla
                 </Link>
             </div>
-            <div className="col-lg-3 col-md-3 col-sm-5 mx-auto mx-0">
+            <div className="col-lg-3 col-md-6 col-sm-6 ">
               <Link
-                exact
-                to={"/hElectrico"}
-                className="btn btn-info  headerMenu__btn"
+
+                to={"/CC3"}
+                className="btn btn-info headerMenu__btn"
               >
-                Horno Eléctrico
+                Coco 3
                 </Link>
             </div>
-            <div className="col-lg-3 col-md-3 col-sm-5 mx-auto mx-0">
+            <div className="col-lg-3 col-md-6 col-sm-6 ">
               <Link
-                exact
+
                 to={"/hCuchara"}
                 className="btn btn-info  headerMenu__btn"
               >
                 Horno Cuchara
                 </Link>
             </div>
-            <div className="col-lg-3 col-md-3 col-sm-5 mx-auto mx-0">
+            <div className="col-lg-3 col-md-6 col-sm-6 ">
               <Link
-                exact
-                to={"/CC3"}
-                className="btn btn-info headerMenu__btn"
+
+                to={"/hElectrico"}
+                className="btn btn-info  headerMenu__btn"
               >
-                CC3
+                Horno Eléctrico
                 </Link>
             </div>
+
+
 
           </div>
           <br />
           <div>
-            <div className="col-lg-10 mx-auto mx-0">
+            <div className="col-lg-12 mx-auto mx-0">
               <Switch>
                 <Route path={"/pMetalico"} component={Pmetalico} />
                 <Route path={"/hElectrico"} component={Helectrico} />
@@ -74,7 +77,7 @@ const Main = () => {
         </Router>
 
         <div className="row  mx-auto mx-0">
-          <div className="col-lg-10 mx-auto mx-0">
+          <div className="col-lg-12 mx-auto mx-0">
             <MainTableAlarms />
           </div>
 

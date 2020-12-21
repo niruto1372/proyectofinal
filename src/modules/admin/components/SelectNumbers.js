@@ -8,7 +8,6 @@
 // };
 
 
-import React from 'react'
 
 const selectNumbers = (obj) => {
   let losnumeros=[];

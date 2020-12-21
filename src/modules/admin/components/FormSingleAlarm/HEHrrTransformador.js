@@ -54,11 +54,9 @@ const HEHrrTransformador = ({ setcurvaAconsultar, obtenerVariable, setgraficar }
 
   return (
     <div className="card  mx-auto">
-      <div className="card-header ">
-        <h5 className="card-title">Horno Eléctrico</h5>
-        <div className="card-category">
-          HRR <i className="fas fa-chevron-right"></i>  Transformador
-        </div>
+     <div className="card-header ">
+        <h6 className="card-title">Sistema: HRR </h6>
+        <p className="card-category">Subsistema: Transformador</p>
       </div>
 
       <div className="card-body ">
@@ -72,25 +70,28 @@ const HEHrrTransformador = ({ setcurvaAconsultar, obtenerVariable, setgraficar }
 
 
           <div className="form">
-            <div className="form-group mx-sm-3 mb-2">
+            <div className="form-group">
               <label htmlFor="inputVariableSingleAlarm">Variable:</label>
-              <select id="inputVariableSingleAlarm" className="form-control ml-2" name="variable" onChange={handleChange} value={form.variable}>
+              <select id="inputVariableSingleAlarm" className="form-control" name="variable" onChange={handleChange} value={form.variable}>
                 <option value="Inclinacion">Inclinacion</option>
                 <option value="Valvula F1">Valvula F1</option>
                 <option value="Valvula F2">Valvula F2</option>
                 <option value="Valvula F3">Valvula F3</option>
-                
+
               </select>
             </div>
-            
-              <button type="submit" className="btn btn-success ">Consultar</button>
-            
+
+            <div className="row">
+              <div className="update  ml-auto mr-auto">
+                <button type="submit" className="btn btn-success  btn-round ">Consultar</button>
+              </div>
+            </div>
 
           </div>
         </form>
 
       </div>
-      
+
       {consulta === true ? (<div className="card-footer ">
         <hr />
         <div className="stats">

@@ -32,14 +32,14 @@ const Footer = () => {
                 <div className="row">
                     <nav className="footer-nav">
                         <ul>
-                            <li><a href="https://www.linkedin.com/feed/" target="_blank">Nilton P. Santos</a></li>
-                            <li><a href="https://www.facebook.com/" target="_blank">Facebook</a></li>
-                            <li><a href="mailto:nilton.santos@ucsp.edu.pe" target="_blank">Email</a></li>
+                            <li><a href="https://www.linkedin.com/feed/" >Nilton P. Santos</a></li>
+                            <li><a href="https://www.facebook.com/" >Facebook</a></li>
+                            <li><a href="mailto:nilton.santos@ucsp.edu.pe" >Email</a></li>
                         </ul>
                     </nav>
                     <div className="credits ml-auto">
                         <span className="copyright">
-                            © 2020 CodiGo
+                            © 2020 
                         </span>
                     </div>
                 </div>

@@ -33,15 +33,15 @@ const Pmetalico = () => {
                 </thead>
                 <tbody>
                   <tr>
-                    <td scope="row">
-                      <i className="fas fa-circle fa__circle_seagreen"></i>
+                    <td >
+                      {/* <i className="fas fa-circle fa__circle_seagreen"></i> */}
 
                       <Link
-                        exact
-                        to={"/hElectrico/cizalla/subsistema"}
+
+                        to={"/hElectrico/horno/subsistema"}
                         className=""
                       >
-                        Patio 1
+                        Horno
                       </Link>
                     </td>
 
@@ -53,17 +53,17 @@ const Pmetalico = () => {
                     <td>0</td>
                   </tr>
                   <tr>
-                    <td scope="row">
-                      <i className="fas fa-circle fa__circle_seagreen"></i>
+                    <td >
+                      {/* <i className="fas fa-circle fa__circle_seagreen"></i> */}
                       <Link
-                        exact
-                        to={"/hElectrico/geuromec/subsistema"}
+
+                        to={"/hElectrico/carrocesta/subsistema"}
                         className=""
                       >
-                        Puente
+                        Carro Cesta
                       </Link>
-                    
-                </td>
+
+                    </td>
                     <td>3/7</td>
                     <td>10</td>
                     <td>17 min</td>
@@ -72,17 +72,17 @@ const Pmetalico = () => {
                     <td>-</td>
                   </tr>
                   <tr>
-                    <td scope="row">
-                      <i className="fas fa-circle fa__circle_seagreen"></i>
+                    <td >
+                      {/* <i className="fas fa-circle fa__circle_seagreen"></i> */}
                       <Link
-                        exact
-                        to={"/hElectrico/balanza/subsistema"}
+
+                        to={"/hElectrico/castillo/subsistema"}
                         className=""
                       >
-                        Barcazas
+                        Castillo
                       </Link>
-                    
-                </td>
+
+                    </td>
                     <td>7/15</td>
                     <td>2</td>
                     <td>5</td>
@@ -91,17 +91,36 @@ const Pmetalico = () => {
                     <td>1</td>
                   </tr>
                   <tr>
-                    <td scope="row">
-                      <i className="fas fa-circle fa__circle_seagreen"></i>
+                    <td >
+                      {/* <i className="fas fa-circle fa__circle_seagreen"></i> */}
                       <Link
-                        exact
-                        to={"/hElectrico/slimpieza/subsistema"}
+
+                        to={"/hElectrico/climpieza/subsistema"}
                         className=""
                       >
-                        Estacionamiento
+                        Cámaras de limpieza
                       </Link>
-                    
-                </td>
+
+                    </td>
+                    <td>2/7</td>
+                    <td>10</td>
+                    <td>-</td>
+                    <td>4</td>
+                    <td>1</td>
+                    <td>-</td>
+                  </tr>
+                  <tr>
+                    <td >
+                      {/* <i className="fas fa-circle fa__circle_seagreen"></i> */}
+                      <Link
+
+                        to={"/hElectrico/hrr/subsistema"}
+                        className=""
+                      >
+                        HRR
+                      </Link>
+
+                    </td>
                     <td>2/7</td>
                     <td>10</td>
                     <td>-</td>
@@ -120,11 +139,13 @@ const Pmetalico = () => {
 
         <br />
         <Switch>
-          <Route path={"/hElectrico/cizalla/subsistema"} component={hElectrico_subsystem} />
-          <Route path={"/hElectrico/geuromec/subsistema"} component={hElectrico_subsystem} />
-          <Route path={"/hElectrico/balanza/subsistema"} component={hElectrico_subsystem} />
-          <Route path={"/hElectrico/slimpieza/subsistema"} component={hElectrico_subsystem} />
-          
+          <Route path={"/hElectrico/horno/subsistema"} component={hElectrico_subsystem} />
+          <Route path={"/hElectrico/carrocesta/subsistema"} component={hElectrico_subsystem} />
+          <Route path={"/hElectrico/castillo/subsistema"} component={hElectrico_subsystem} />
+          <Route path={"/hElectrico/climpieza/subsistema"} component={hElectrico_subsystem} />
+          <Route path={"/hElectrico/hrr/subsistema"} component={hElectrico_subsystem} />
+
+
           {/* <Route component={NotFound} /> */}
         </Switch>
       </Router>

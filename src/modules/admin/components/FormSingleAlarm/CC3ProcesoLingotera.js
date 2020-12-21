@@ -56,8 +56,8 @@ const CC3ProcesoLingotera = ({ setcurvaAconsultar, obtenerVariable, setgraficar 
   return (
     <div className="card  mx-auto">
       <div className="card-header ">
-        <h6 className="card-title">Proceso <i className="fas fa-chevron-right"></i>  Lingotera</h6>
-        
+        <h6 className="card-title">Sistema: Proceso </h6>
+        <p className="card-category">Subsistema: Lingotera</p>
       </div>
 
       <div className="card-body ">
@@ -71,9 +71,9 @@ const CC3ProcesoLingotera = ({ setcurvaAconsultar, obtenerVariable, setgraficar 
 
 
           <div className="form">
-            <div className="form-group mx-sm-3 mb-2">
+            <div className="form-group ">
               <label htmlFor="inputVariableSingleAlarm">Variable:</label>
-              <select id="inputVariableSingleAlarm" className="form-control ml-2" name="variable" onChange={handleChange} value={form.variable}>
+              <select id="inputVariableSingleAlarm" className="form-control " name="variable" onChange={handleChange} value={form.variable}>
               <option value="Flujo De Agua">Flujo De Agua</option>
                 <option value="Presion De Agua">Presion De Agua</option>
                 <option value="Temperatura De Agua">Temperatura DeAgua</option>
@@ -81,43 +81,11 @@ const CC3ProcesoLingotera = ({ setcurvaAconsultar, obtenerVariable, setgraficar 
               </select>
             </div>
             
-              <button type="submit" className="btn btn-success ">Consultar</button>
-            
-
-          </div>
-        </form>
-
-      </div>
-      
-      <hr/>
-      <div className="card-header ">
-        <h6 className="card-title">Proceso <i className="fas fa-chevron-right"></i>  Molde</h6>
-        
-      </div>
-
-      <div className="card-body ">
-        <form onSubmit={handleSubmit}>
-          {error === true ? (
-            <div className="alert alert-danger " role="alert">
-              <strong>Error!</strong> Debes llenar todos los campos.
-
+            <div className="row">
+              <div className="update  ml-auto mr-auto">
+                <button type="submit" className="btn btn-success  btn-round ">Consultar</button>
+              </div>
             </div>
-          ) : null}
-
-
-          <div className="form">
-            <div className="form-group mx-sm-3 mb-2">
-              <label htmlFor="inputVariableSingleAlarm">Variable:</label>
-              <select id="inputVariableSingleAlarm" className="form-control ml-2" name="variable" onChange={handleChange} value={form.variable}>
-              <option value="Flujo De Agua">Flujo De Agua</option>
-                <option value="Presion De Agua">Presion De Agua</option>
-                <option value="Temperatura De Agua">Temperatura DeAgua</option>
-                
-              </select>
-            </div>
-            
-              <button type="submit" className="btn btn-success ">Consultar</button>
-            
 
           </div>
         </form>

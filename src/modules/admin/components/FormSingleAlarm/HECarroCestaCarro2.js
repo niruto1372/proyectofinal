@@ -56,10 +56,8 @@ const HECarroCestaCarro2 = ({ setcurvaAconsultar, obtenerVariable, setgraficar }
   return (
     <div className="card  mx-auto">
       <div className="card-header ">
-        <h5 className="card-title">Horno Eléctrico</h5>
-        <div className="card-category">
-          Carro Cesta <i className="fas fa-chevron-right"></i>  Carro 2
-        </div>
+        <h6 className="card-title">Sistema: Carro Cesta </h6>
+        <p className="card-category">Subsistema: Carro 2</p>
       </div>
 
       <div className="card-body ">
@@ -73,9 +71,9 @@ const HECarroCestaCarro2 = ({ setcurvaAconsultar, obtenerVariable, setgraficar }
 
 
           <div className="form">
-            <div className="form-group mx-sm-3 mb-2">
+            <div className="form-group ">
               <label htmlFor="inputVariableSingleAlarm">Variable:</label>
-              <select id="inputVariableSingleAlarm" className="form-control ml-2" name="variable" onChange={handleChange} value={form.variable}>
+              <select id="inputVariableSingleAlarm" className="form-control " name="variable" onChange={handleChange} value={form.variable}>
               <option value="Peso">Peso</option>
                 <option value="Corriente Motor 1">Corriente Motor 1</option>
                 <option value="Corriente Motor 2">Corriente Motor 2</option>
@@ -85,8 +83,11 @@ const HECarroCestaCarro2 = ({ setcurvaAconsultar, obtenerVariable, setgraficar }
               </select>
             </div>
             
-              <button type="submit" className="btn btn-success ">Consultar</button>
-            
+            <div className="row">
+              <div className="update  ml-auto mr-auto">
+                <button type="submit" className="btn btn-success  btn-round ">Consultar</button>
+              </div>
+            </div>
 
           </div>
         </form>

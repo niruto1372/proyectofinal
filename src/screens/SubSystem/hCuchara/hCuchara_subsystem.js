@@ -1,9 +1,11 @@
 import React from 'react'
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-import NotFound from "./../../404/NotFound";
+import { BrowserRouter as Router} from "react-router-dom";
+// import NotFound from "./../../404/NotFound";
 import MainTableSubsystem from './../../SubSystem/MainTableSubsystem';
 
 const hCuchara_subsystem = () => {
+    const data=["Potencia activa","Potencia reactiva", "Corriente fase R", "Corriente fase S","Filtro 1 temperatura","Filtro 1 presion","Filtro 2 temperatura","Filtro 2 presion"];
+
     return (
         <div>
             <div className="card card__table mx-auto">
@@ -19,39 +21,22 @@ const hCuchara_subsystem = () => {
 
                                 <ul className="list-group ">
                                     <li className="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
-                                        Grua Euromec
-                                        <span className="badge badge-secondary badge-pill">1</span>
-                                    </li>
-                                    <li className="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
-                                        
-                                            Balanza
-                                        
+                                        Transformador
                                         <span className="badge badge-secondary badge-pill">4</span>
                                     </li>
                                     <li className="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
-                                       
-                                            Cizalla
                                         
-                                        <span className="badge badge-secondary badge-pill">0</span>
+                                            BagHouse
+                                        
+                                        <span className="badge badge-secondary badge-pill">4</span>
                                     </li>
-                                    <li className="list-group-item list-group-item-action d-flex justify-content-between align-items-center ">
-                                        
-                                            Portal de Radiación 
-                                        
-                                        <span className="badge badge-secondary badge-pill">3</span>
-                                    </li>
-                                    <li className="list-group-item list-group-item-action d-flex justify-content-between align-items-center ">
-                                        
-                                            Sistema de Limpieza
-                                        
-                                        <span className="badge badge-secondary badge-pill">1</span>
-                                    </li>
+                                    
                                 </ul>
 
 
                             </div>
                             <div className="col-md-9 col-sm-12">
-                                <MainTableSubsystem/>
+                                <MainTableSubsystem data={data}/>
                             </div>
                         </div>
                     </div>

@@ -55,8 +55,8 @@ const HECarroCestaCarro1 = ({ setcurvaAconsultar, obtenerVariable, setgraficar }
   return (
     <div className="card  mx-auto">
       <div className="card-header ">
-        <h6 className="card-title">Carro Cesta <i className="fas fa-chevron-right"></i>  Carro 1</h6>
-        
+        <h6 className="card-title">Sistema: Carro Cesta </h6>
+        <p className="card-category">Subsistema: Carro 1</p>
       </div>
 
       <div className="card-body ">
@@ -70,9 +70,9 @@ const HECarroCestaCarro1 = ({ setcurvaAconsultar, obtenerVariable, setgraficar }
 
 
           <div className="form">
-            <div className="form-group mx-sm-3 mb-2">
+            <div className="form-group ">
               <label htmlFor="HECarroCescaCarro1">Variable:</label>
-              <select id="HECarroCescaCarro1" className="form-control ml-2" name="variable" onChange={handleChange} value={form.variable}>
+              <select id="HECarroCescaCarro1" className="form-control " name="variable" onChange={handleChange} value={form.variable}>
                 <option value="Peso">Peso</option>
                 <option value="Corriente Motor 1">Corriente Motor 1</option>
                 <option value="Corriente Motor 2">Corriente Motor 2</option>
@@ -80,53 +80,17 @@ const HECarroCestaCarro1 = ({ setcurvaAconsultar, obtenerVariable, setgraficar }
 
               </select>
             </div>
-
-            <button type="submit" className="btn btn-success ">Consultar</button>
-
+            <div className="row">
+              <div className="update  ml-auto mr-auto">
+                <button type="submit" className="btn btn-success  btn-round ">Consultar</button>
+              </div>
+            </div>
 
           </div>
         </form>
 
       </div>
 
-
-
-      <hr />
-
-      <div className="card-header ">
-        <h6 className="card-title"> Carro Cesta <i className="fas fa-chevron-right"></i>  Carro 2</h6>
-      </div>
-
-      <div className="card-body ">
-        <form onSubmit={handleSubmit}>
-          {error === true ? (
-            <div className="alert alert-danger " role="alert">
-              <strong>Error!</strong> Debes llenar todos los campos.
-
-            </div>
-          ) : null}
-
-
-          <div className="form">
-            <div className="form-group mx-sm-3 mb-2">
-              <label htmlFor="HECarroCescaCarro2">Variable:</label>
-              <select id="HECarroCescaCarro2" className="form-control ml-2" name="variable" onChange={handleChange} value={form.variable}>
-                <option value="Peso">Peso</option>
-                <option value="Corriente Motor 1">Corriente Motor 1</option>
-                <option value="Corriente Motor 2">Corriente Motor 2</option>
-                <option value="Posicion">Posicion</option>
-
-
-              </select>
-            </div>
-
-            <button type="submit" className="btn btn-success ">Consultar</button>
-
-
-          </div>
-        </form>
-
-      </div>
 
 
 

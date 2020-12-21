@@ -56,8 +56,8 @@ const CC3ElectricoMotor = ({ setcurvaAconsultar, obtenerVariable, setgraficar })
   return (
     <div className="card  mx-auto">
       <div className="card-header ">
-        <h6 className="card-title">Eléctrico <i className="fas fa-chevron-right"></i>  Motor</h6>
-        
+        <h6 className="card-title">Sistema: Eléctrico </h6>
+        <p className="card-category">Subsistema: Motor</p>
       </div>
 
       <div className="card-body ">
@@ -71,16 +71,20 @@ const CC3ElectricoMotor = ({ setcurvaAconsultar, obtenerVariable, setgraficar })
 
 
           <div className="form">
-            <div className="form-group mx-sm-3 mb-2">
-              <label htmlFor="inputVariableSingleAlarm">Variable:</label>
-              <select id="inputVariableSingleAlarm" className="form-control ml-2" name="variable" onChange={handleChange} value={form.variable}>
+            <div className="form-group">
+              <label htmlFor="inputVariableSingleAlarm">Variable</label>
+              <select id="inputVariableSingleAlarm" className="form-control" name="variable" onChange={handleChange} value={form.variable}>
                 <option value="Corriente De Oscilacion">Corriente De Oscilacion</option>
                 <option value="Corriente De Extraccion">Corriente De Extraccion</option>
                 <option value="Corriente De Falsa Barra">Corriente De Falsa Barra</option>
                 <option value="Corriente Tundish">Corriente Tundish</option>
               </select>
             </div>
-            <button type="submit" className="btn btn-success ">Consultar</button>
+            <div className="row">
+              <div className="update  ml-auto mr-auto">
+                <button type="submit" className="btn btn-success  btn-round ">Consultar</button>
+              </div>
+            </div>
           </div>
         </form>
 

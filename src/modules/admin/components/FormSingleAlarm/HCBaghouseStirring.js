@@ -53,8 +53,8 @@ const HCBaghouseStirring = ({ setcurvaAconsultar, obtenerVariable, setgraficar }
   return (
     <div className="card  mx-auto">
       <div className="card-header ">
-        <h6 className="card-title">BagHouse <i className="fas fa-chevron-right"></i>  Stirring</h6>
-        
+        <h6 className="card-title">Sistema: BagHouse </h6>
+        <p className="card-category">Subsistema: Stirring</p>
       </div>
 
       <div className="card-body ">
@@ -68,9 +68,9 @@ const HCBaghouseStirring = ({ setcurvaAconsultar, obtenerVariable, setgraficar }
 
 
           <div className="form">
-            <div className="form-group mx-sm-3 mb-2">
+            <div className="form-group">
               <label htmlFor="HCBagHouseStirring">Variable:</label>
-              <select id="HCBagHouseStirring" className="form-control ml-2" name="variable" onChange={handleChange} value={form.variable}>
+              <select id="HCBagHouseStirring" className="form-control " name="variable" onChange={handleChange} value={form.variable}>
                 <option value="Filtro 1 Temperatura">Filtro 1 Temperatura</option>
                 <option value="Filtro 1 Presion">Filtro 1 Presion</option>
                 <option value="Filtro 2 Temperatura">Filtro 2 Temperatura</option>
@@ -79,8 +79,11 @@ const HCBaghouseStirring = ({ setcurvaAconsultar, obtenerVariable, setgraficar }
               </select>
             </div>
             
-              <button type="submit" className="btn btn-success ">Consultar</button>
-            
+            <div className="row">
+              <div className="update  ml-auto mr-auto">
+                <button type="submit" className="btn btn-success  btn-round ">Consultar</button>
+              </div>
+            </div>
 
           </div>
         </form>

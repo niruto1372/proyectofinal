@@ -1,9 +1,9 @@
 import React from 'react'
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-import NotFound from "./../../404/NotFound";
+import { BrowserRouter as Router } from "react-router-dom";
 import MainTableSubsystem from './../../SubSystem/MainTableSubsystem';
 
 const cc3_subsystem = () => {
+    const data=["corriente de oscilacion","corriente de extraccion", "Corriente de falsa barra", "Corriente Tundish"];
     return (
         <div>
             <div className="card card__table mx-auto">
@@ -19,39 +19,34 @@ const cc3_subsystem = () => {
 
                                 <ul className="list-group ">
                                     <li className="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
-                                        Grua Euromec
-                                        <span className="badge badge-secondary badge-pill">1</span>
-                                    </li>
-                                    <li className="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
-                                        
-                                            Balanza
-                                        
+                                        Eléctrico
                                         <span className="badge badge-secondary badge-pill">4</span>
                                     </li>
                                     <li className="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                                        
+                                            Hidráulico
+                                        
+                                        <span className="badge badge-secondary badge-pill">6</span>
+                                    </li>
+                                    <li className="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
                                        
-                                            Cizalla
+                                            Mecánico
                                         
-                                        <span className="badge badge-secondary badge-pill">0</span>
+                                        <span className="badge badge-secondary badge-pill">6</span>
                                     </li>
                                     <li className="list-group-item list-group-item-action d-flex justify-content-between align-items-center ">
                                         
-                                            Portal de Radiación 
+                                            Proceso
                                         
-                                        <span className="badge badge-secondary badge-pill">3</span>
+                                        <span className="badge badge-secondary badge-pill">5</span>
                                     </li>
-                                    <li className="list-group-item list-group-item-action d-flex justify-content-between align-items-center ">
-                                        
-                                            Sistema de Limpieza
-                                        
-                                        <span className="badge badge-secondary badge-pill">1</span>
-                                    </li>
+                                    
                                 </ul>
 
 
                             </div>
                             <div className="col-md-9 col-sm-12">
-                                <MainTableSubsystem/>
+                                <MainTableSubsystem data={data} />
                             </div>
                         </div>
                     </div>

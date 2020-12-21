@@ -33,15 +33,15 @@ const Pmetalico = () => {
                 </thead>
                 <tbody>
                   <tr>
-                    <td scope="row">
-                      <i className="fas fa-circle fa__circle_seagreen"></i>
+                    <td >
+                      {/* <i className="fas fa-circle fa__circle_seagreen"></i> */}
 
                       <Link
-                        exact
-                        to={"/hCuchara/cizalla/subsistema"}
+
+                        to={"/hCuchara/transformador/subsistema"}
                         className=""
                       >
-                        Estacionamiento
+                        Transformador
                       </Link>
                     </td>
 
@@ -53,17 +53,17 @@ const Pmetalico = () => {
                     <td>1</td>
                   </tr>
                   <tr>
-                    <td scope="row">
-                      <i className="fas fa-circle fa__circle_redcrayola"></i>
+                    <td >
+                      {/* <i className="fas fa-circle fa__circle_redcrayola"></i> */}
                       <Link
-                        exact
-                        to={"/hCuchara/geuromec/subsistema"}
+
+                        to={"/hCuchara/baghose/subsistema"}
                         className=""
                       >
-                        Grua euromec
+                        BagHouse
                       </Link>
-                    
-                </td>
+
+                    </td>
                     <td>8/8</td>
                     <td>1</td>
                     <td>27 min</td>
@@ -71,44 +71,7 @@ const Pmetalico = () => {
                     <td>-</td>
                     <td>-</td>
                   </tr>
-                  <tr>
-                    <td scope="row">
-                      <i className="fas fa-circle fa__circle_seagreen"></i>
-                      <Link
-                        exact
-                        to={"/hCuchara/balanza/subsistema"}
-                        className=""
-                      >
-                        Balanza
-                      </Link>
-                    
-                </td>
-                    <td>4/5</td>
-                    <td>0</td>
-                    <td>-</td>
-                    <td>1</td>
-                    <td>-</td>
-                    <td>-</td>
-                  </tr>
-                  <tr>
-                    <td scope="row">
-                      <i className="fas fa-circle fa__circle_seagreen"></i>
-                      <Link
-                        exact
-                        to={"/hCuchara/slimpieza/subsistema"}
-                        className=""
-                      >
-                        Sistema de limpieza
-                      </Link>
-                    
-                </td>
-                    <td>2/3</td>
-                    <td>0</td>
-                    <td>-</td>
-                    <td>1</td>
-                    <td>-</td>
-                    <td>-</td>
-                  </tr>
+                  
                 </tbody>
               </table>
             </div>
@@ -120,11 +83,9 @@ const Pmetalico = () => {
 
         <br />
         <Switch>
-          <Route path={"/hCuchara/cizalla/subsistema"} component={hCuchara_subsystem} />
-          <Route path={"/hCuchara/geuromec/subsistema"} component={hCuchara_subsystem} />
-          <Route path={"/hCuchara/balanza/subsistema"} component={hCuchara_subsystem} />
-          <Route path={"/hCuchara/slimpieza/subsistema"} component={hCuchara_subsystem} />
-          
+          <Route path={"/hCuchara/transformador/subsistema"} component={hCuchara_subsystem} />
+          <Route path={"/hCuchara/baghose/subsistema"} component={hCuchara_subsystem} />
+
           {/* <Route component={NotFound} /> */}
         </Switch>
       </Router>

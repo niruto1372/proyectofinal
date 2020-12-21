@@ -12,7 +12,6 @@ const AdminDashboardSistema = () => {
                     <TableVariables />
                 </div>
             </div>
-
             <Footer />
         </>
     )

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { MDBDataTableV5 } from 'mdbreact';
-import { getVariables, getAlarmas, deleteAlarmaById } from '../../services/alarmas';
+import { getVariables,  deleteAlarmaById } from '../../services/alarmas';
 import Swal from "sweetalert2";
 import Cargando from '../../modules/admin/components/Cargando';
 
@@ -55,16 +55,16 @@ const TableVariables = () => {
 
     }
 
-    const infoAlarmaById = (id) => {
-        alarmas.filter((id) => {
-            Swal.fire(
-                ` Valor fuera de rango Inferior`,
-                'Revisar qué tan inestable se encuentra en las últimas 24 horas',
-                'question'
-            )
-        })
+    // const infoAlarmaById = (id) => {
+    //     alarmas.filter((id) => {
+    //         Swal.fire(
+    //             ` Valor fuera de rango Inferior`,
+    //             'Revisar qué tan inestable se encuentra en las últimas 24 horas',
+    //             'question'
+    //         )
+    //     })
 
-    }
+    // }
 
     const datatable = {
         columns: [
@@ -74,7 +74,7 @@ const TableVariables = () => {
             { label: "Subsistema", field: "subsystem" },
             { label: "Variable Observada", field: "variable" },
             { label: "Valor", field: "value" },
-            { label: "Mas detalle", field: "masDetalle" },
+            //{ label: "Mas detalle", field: "masDetalle" },
             { label: "Fecha y Hora de Inicio", field: "time" },
             // { label: "Generar OM", field: "generarOM" },
         ],
@@ -93,18 +93,18 @@ const TableVariables = () => {
                         </button>
                     </>
                 ),
-                masDetalle: (
-                    <>
-                        <button
-                            className="btn btn-sm btn-primary"
-                            onClick={() => {
-                                infoAlarmaById(objAlarmas.id);
-                            }}
-                        >
-                            <i className="fas fa-info-circle"></i>
-                        </button>
-                    </>
-                ),
+                // masDetalle: (
+                //     <>
+                //         <button
+                //             className="btn btn-sm btn-primary"
+                //             onClick={() => {
+                //                 infoAlarmaById(objAlarmas.id);
+                //             }}
+                //         >
+                //             <i className="fas fa-info-circle"></i>
+                //         </button>
+                //     </>
+                // ),
                 // generarOM: (
                 //     <>
                 //         <button className="btn btn-sm btn-outline-success">
@@ -123,8 +123,7 @@ const TableVariables = () => {
         <div>
             <div className="card card__table mx-auto">
                 <div className="card-header">
-                    <h4 className="card-title text-center">Histórico total de variables</h4>
-                    
+                    <h4 className="card-title text-center">Histórico total de variables</h4>                    
                 </div>
                 <div className="card-body ">
                     <div className="table-responsive-lg">

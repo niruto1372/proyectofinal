@@ -4,7 +4,7 @@ import { postRegister } from "../../../services/auth";
 
 const AuthRegister = ({ history }) => {
   const localAuthContext = useContext(AuthContext);
-  const {  iniciarSesion } = localAuthContext;
+  const { iniciarSesion } = localAuthContext;
 
   const [formulario, setFormulario] = useState({
     username: "",
@@ -42,7 +42,7 @@ const AuthRegister = ({ history }) => {
       };
       postRegister(objUsuario).then((rpta) => {
         console.log(rpta);
-        
+
         if (rpta.ok) {
           iniciarSesion(rpta.token);
           history.replace("/");
@@ -53,78 +53,91 @@ const AuthRegister = ({ history }) => {
 
   return (
     <>
-      <div className="card card_sesion mx-auto">
-        <div className="card-header">
-          <h4 className="card-title">Registrar Usuario</h4>
-        </div>
-        <div className="card-body">
-          <form onSubmit={handleSubmit}>
-            <label htmlFor="username">Nombre de usuario:</label>
-            <input
-              type="text"
-              className="form-control"
-              id="username"
-              name="username"
-              value={formulario.username}
-              onChange={handleChange}
-            />
+      <div className="container">
+        <div className="row rowform">
+          <div className="card card_sesion mx-auto">
+            <div className="card-header">
+              <img src="https://www.hwzdigital.ch/files/2015/12/roboter-1280x0-c-default.jpg" className="card-img-top" alt="automation" />
+            </div>
+            <div className="card-body">
+              <h4 className="card-title text-center">Crear una cuenta</h4>
+              <form onSubmit={handleSubmit}>
+                <label htmlFor="username">Nombre de usuario:</label>
+                <input
+                  type="text"
+                  className="form-control"
+                  id="username"
+                  name="username"
+                  value={formulario.username}
+                  onChange={handleChange}
+                />
 
-            <label htmlFor="first_name">Nombre:</label>
-            <input
-              type="text"
-              className="form-control"
-              id="first_name"
-              name="first_name"
-              value={formulario.first_name}
-              onChange={handleChange}
-            />
+                <label htmlFor="first_name">Nombre:</label>
+                <input
+                  type="text"
+                  className="form-control"
+                  id="first_name"
+                  name="first_name"
+                  value={formulario.first_name}
+                  onChange={handleChange}
+                />
 
-            <label htmlFor="last_name">Apellidos:</label>
-            <input
-              type="text"
-              className="form-control"
-              id="last_name"
-              name="last_name"
-              value={formulario.last_name}
-              onChange={handleChange}
-            />
+                <label htmlFor="last_name">Apellidos:</label>
+                <input
+                  type="text"
+                  className="form-control"
+                  id="last_name"
+                  name="last_name"
+                  value={formulario.last_name}
+                  onChange={handleChange}
+                />
 
-            <label htmlFor="email">Email:</label>
-            <input
-              type="email"
-              className="form-control"
-              id="email"
-              name="email"
-              value={formulario.email}
-              onChange={handleChange}
-            />
+                <label htmlFor="email">Email:</label>
+                <input
+                  type="email"
+                  className="form-control"
+                  id="email"
+                  name="email"
+                  value={formulario.email}
+                  onChange={handleChange}
+                />
 
-            <label htmlFor="pass1">Contraseña:</label>
-            <input
-              type="password"
-              className="form-control"
-              id="pass1"
-              name="pass1"
-              value={formulario.pass1}
-              onChange={handleChange}
-            />
+                <label htmlFor="pass1">Contraseña:</label>
+                <input
+                  type="password"
+                  className="form-control"
+                  id="pass1"
+                  name="pass1"
+                  value={formulario.pass1}
+                  onChange={handleChange}
+                />
 
-            <label htmlFor="pass2">Ingresa nuevamente la contraseña:</label>
-            <input
-              type="password"
-              className="form-control"
-              id="pass2"
-              name="pass2"
-              value={formulario.pass2}
-              onChange={handleChange}
-            />
+                <label htmlFor="pass2">Ingresa nuevamente la contraseña:</label>
+                <input
+                  type="password"
+                  className="form-control"
+                  id="pass2"
+                  name="pass2"
+                  value={formulario.pass2}
+                  onChange={handleChange}
+                />
 
-            <button type="submit" className="btn btn-primary btn_sesion">
-              Registrar
+                <button type="submit" className="btn btn-primary btn_sesion">
+                  Registrar
             </button>
-          </form>
+
+                <a className="btn btn-primary btn_sesion text-light" href="/auth/login">Atrás</a>
+
+
+
+              </form>
+            </div>
+          </div>
+
         </div>
+
       </div>
+
     </>
   );
 };
